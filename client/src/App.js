@@ -1,7 +1,6 @@
 // import dependencies
 import * as React from 'react';
-// import stylesheet
-import './index.scss';
+
 // import components
 import Map from './components/Map';
 import Header from './components/Header';
