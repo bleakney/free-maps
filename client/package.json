@@ -5,6 +5,8 @@
   "dependencies": {
     "@apollo/client": "^3.4.16",
     "@deck.gl/react": "^8.5.10",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/material": "^5.0.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
