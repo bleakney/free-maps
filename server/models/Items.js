@@ -13,10 +13,6 @@ const itemSchema = new Schema({
     image: {
         type: String,
     },
-    location: {
-        type: String,
-        required: true
-    },
     status: {
         type: String,
         required: true,

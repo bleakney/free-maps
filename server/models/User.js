@@ -25,10 +25,14 @@ const userSchema = new Schema(
       match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
         , 'Must use a valid phone number'],
     },
-       // set savedItems to be an array of data that adheres to the bookSchema
-      savedItems: [itemSchema]  ,
-      //donation that user is making
-      donation:[itemSchema]
+    location: {
+      type: String,
+      required: true
+    },
+    // set savedItems to be an array of data that adheres to the bookSchema
+    savedItems: [itemSchema],
+    //donation that user is making
+    donation: [itemSchema]
   },
   // set this to use virtual below
   {
