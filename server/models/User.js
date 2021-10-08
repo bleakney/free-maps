@@ -45,9 +45,9 @@ const userSchema = new Schema(
         len: [10]
     }
     },
-    // set savedItems to be an array of data that adheres to the bookSchema
+    // set savedItems to be an array of data that adheres to the ItemsSchema
     savedItems: [itemSchema],
-    //donation that user is making
+    //donation that user is making that adhere to the itemSchemas
     donation: [itemSchema]
   },
   // set this to use virtual below
