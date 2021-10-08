@@ -6,6 +6,7 @@ type User{
     username:String
     email:String
     phone:String
+    location:String
     savedItems:[Items]
     donation:[Items]
 }
