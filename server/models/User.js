@@ -8,16 +8,26 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      validate: {
+        len: [3]
+    }
     },
     email: {
       type: String,
       required: true,
       unique: true,
       match: [/.+@.+\..+/, 'Must use a valid email address'],
+      validate: {
+        len: [5]
+    }
     },
     password: {
       type: String,
+      allowNull: false,
       required: true,
+      validate: {
+        len: [8]
+    }
     },
     phone: {
       type: String,
@@ -27,7 +37,10 @@ const userSchema = new Schema(
     },
     location: {
       type: String,
-      required: true
+      required: true,
+      validate: {
+        len: [10]
+    }
     },
     // set savedItems to be an array of data that adheres to the bookSchema
     savedItems: [itemSchema],
