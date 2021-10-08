@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const itemSchema = require('./Items');
 
 const userSchema = new Schema(
   {
@@ -18,12 +19,14 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
- phone:{
-     type:String,
-     required:true,
-     match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
-     , 'Must use a valid phone number'],
- }
+    phone: {
+      type: String,
+      required: true,
+      match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
+        , 'Must use a valid phone number'],
+    },
+       // set savedItems to be an array of data that adheres to the bookSchema
+      savedItems: [itemSchema]  
   },
   // set this to use virtual below
   {
