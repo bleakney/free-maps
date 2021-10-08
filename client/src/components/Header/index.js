@@ -1,33 +1,29 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Typography } from '@mui/material';
+// import IconButton from '@mui/material/IconButton';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import {css} from '@emotion/react';
 
-function Header() {
+function Header(props) {
     return (
-        <Box sk={{ flexGrow: 1 }}>
-            <AppBar position='sticky'>
-                <Toolbar>
-                    <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="navigation menu"
-                    sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-                        treasure maps
-                    </Typography>
-                    <Button>Login</Button>
-                </Toolbar>
-            </AppBar>
-        </Box>
+        <header>
+            <nav>
+                <div className="navbar">
+                {/* <IconButton>
+                    <MenuIcon />
+                </IconButton> */}
+                <h4 className="nav-title">freesource maps</h4>
+                <div className="nav-list">
+                    <span className="nav-link">
+                        sign in
+                    </span>
+                    <span className="nav-link nav-signup">
+                        new user
+                    </span>
+
+                </div>
+                </div>
+            </nav>
+        </header>
     )
 };
 

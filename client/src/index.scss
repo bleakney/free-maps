@@ -1,0 +1,65 @@
+@import 'mapbox-gl/dist/mapbox-gl.css';
+
+// FONT VARIABLES
+$serif: 'Playfair Display', serif;
+$sans-serif: 'Poppins', sans-serif;
+
+
+// COLOR VARIABLES
+$blue-dark: rgb(6, 30, 54);
+$blue-light: rgb(194, 228, 255);
+$blue-contrast: rgb(166, 216, 254);
+$redgray-dark: rgb(191, 171, 171);
+$redgray-light: rgb(239, 235, 239);
+
+body, nav {
+    background-color: $blue-light;
+    color: $redgray-dark;
+    font-family: $sans-serif;
+    margin: 0;
+}
+
+nav {
+    background-color: $blue-light;
+    font-weight: 500;
+    box-shadow: 0px 3px 3px $blue-contrast;
+    margin-bottom: .5rem;
+    
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 1rem 0 1rem;
+    }
+
+    .nav-title {
+        font-weight: 600;
+        text-shadow: .125rem .125rem $redgray-light;
+    }
+    .nav-title:hover, .nav-link:hover {
+        cursor: pointer;
+        text-shadow: -.125rem .125rem $redgray-light;
+    }
+   
+    .nav-list {
+        text-align: right;
+    }
+    
+    .nav-link {
+        margin-left: 1rem;
+
+    }
+
+    .nav-signup {
+        border: 1px solid $redgray-dark;
+        padding: .5rem;
+        border-radius: 30px;
+    }
+    .nav-signup:hover {
+        background-color: $redgray-dark;
+        color: $redgray-light;
+        text-shadow: .125rem .125rem $redgray-dark;
+    }
+}
