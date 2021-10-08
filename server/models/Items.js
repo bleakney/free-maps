@@ -4,14 +4,22 @@ const UserSchema = require('./User')
 const itemSchema = new Schema({
     title: {
         type: String,
-        required: true
+        allowNull: false,
+        required: true,
+        validate: {
+            len: [3]
+        }
     },
     description: {
         type: String,
         required: true,
+        validate: {
+            len: [10]
+        }
     },
     image: {
         type: String,
+        
     },
     status: {
         type: String,

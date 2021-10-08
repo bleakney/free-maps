@@ -7,6 +7,7 @@ const userSchema = new Schema(
     username: {
       type: String,
       required: true,
+      allowNull: false,
       unique: true,
       validate: {
         len: [3]
@@ -14,6 +15,7 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
+      allowNull: false,
       required: true,
       unique: true,
       match: [/.+@.+\..+/, 'Must use a valid email address'],
@@ -37,6 +39,7 @@ const userSchema = new Schema(
     },
     location: {
       type: String,
+      allowNull: false,
       required: true,
       validate: {
         len: [10]
