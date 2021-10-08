@@ -24,12 +24,6 @@ const itemSchema = new Schema({
     quantity: {
         type: Number,
         required: true
-    },
-    donator: {
-        type: UserSchema,
-        required: true
-
-    }
-});
+    }});
 
 module.exports = itemSchema;
