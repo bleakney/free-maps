@@ -26,7 +26,9 @@ const userSchema = new Schema(
         , 'Must use a valid phone number'],
     },
        // set savedItems to be an array of data that adheres to the bookSchema
-      savedItems: [itemSchema]  
+      savedItems: [itemSchema]  ,
+      //donation that user is making
+      donation:[itemSchema]
   },
   // set this to use virtual below
   {
