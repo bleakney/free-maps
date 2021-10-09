@@ -10,6 +10,7 @@ function Search() {
         <FontAwesomeIcon icon={faSearch} size="2x"></FontAwesomeIcon>
         <input type="text" name=""></input>
       </div>
+      <h2>Find your next treasure here!</h2>
     </div>
   );
 }
