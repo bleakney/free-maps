@@ -2,7 +2,8 @@
 // import React, { useEffect } from 'react';
 // import { func } from 'prop-types';
 import React from 'react';
-import "./components/Search/style.css"
+import "./components/Search/style.css";
+import './components/Footer/style.css'; 
 // import WebFont from 'webfontloader';
 // import './index.scss';
 
@@ -10,11 +11,13 @@ import "./components/Search/style.css"
 // import Map from './components/Map';
 // import Header from './components/Header';
 import Search from './components/Search';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
       < Search />
+      <Footer />
     </div>
   )
 }
