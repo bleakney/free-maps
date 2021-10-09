@@ -4,18 +4,13 @@ const UserSchema = require('./User')
 const itemSchema = new Schema({
     title: {
         type: String,
-        allowNull: false,
         required: true,
-        validate: {
-            len: [3]
-        }
+      
     },
     description: {
         type: String,
         required: true,
-        validate: {
-            len: [10]
-        }
+      
     },
     image: {
         type: String,
@@ -26,7 +21,7 @@ const itemSchema = new Schema({
         required: true,
     },
     quantity: {
-        type: Number,
+        type: String,
         required: true
     }});
 
