@@ -11,13 +11,12 @@ type User{
     donation:[Items]
 }
 
-type Book {
-    authors: [String]
-    description: String
-    bookId: String
-    image: String
+type Items {
     title: String
-    link: String
+    description: String
+    image: String
+    status: String
+    quantity: Number
   }
   type Auth {
     token: ID!
@@ -29,8 +28,9 @@ type Book {
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(authors: [String], description: String!, title: String!, bookId: String!, image: String, link: String): User
-    removeBook(bookId: String!): User
+    saveItems(title: String!, description: String!, image: String!, status: String!,quantity:Number!): User
+    searchItems(title: String!): User
+
   }
 `;
 // export the typeDefs
