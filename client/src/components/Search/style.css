@@ -9,12 +9,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background: linear-gradient(
     25deg,
     rgb(6, 30, 54) 50%,
     rgba(6, 30, 54, 0.938) 50%
   );
 }
+
 
 :root {
   --blue-dark: rgb(6, 30, 54);
@@ -27,6 +29,7 @@ body {
 h1 {
   font-size: 100px;
   text-align: center;
+  padding-top: 3%;
   padding-bottom: 3%;
   color: rgb(191, 171, 171);
   text-shadow: 2px 2px rgba(0, 0, 0, 0.35);

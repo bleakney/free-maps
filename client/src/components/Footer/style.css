@@ -10,7 +10,7 @@
   }
 
 button {
-    background-color: rgb(242, 246, 248, 0.76);
+    background-color: rgba(166, 216, 254);
     border: none;
     border-radius: 12px;
     font-size: 14px;
@@ -20,5 +20,5 @@ button {
 }
 
 button:hover {
-    background-color: rgb(166, 216, 254);
+    background-color: rgb(242, 246, 248, 0.76);
 }
