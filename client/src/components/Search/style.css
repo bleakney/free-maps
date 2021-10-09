@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(25deg, rgb(6, 30, 54) 50%, rgba(6, 30, 54, 0.747) 50%);
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    padding-bottom: 5%;
+    color: rgb(191, 171, 171); 
+}
+
+.box {
+    width: 800px;
+    height: 80px;
+    background-color: rgb(191, 171, 171);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.box > i {
+    font-size: 20px;
+    color: #0000;
+}
+
+.box > input {
+    flex: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: rgb(191, 171, 171);
+}
