@@ -1,14 +1,16 @@
 import React from "react";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 function Search() {
   return (
-    <form action="/" method="get">
-      <label class="search-bar">
-        <span className="visually-hidden">Search by City/Zipcode</span>
-      </label>
-      <input type="text" id="header-search" placeholder="Search " name="s" />
-      <button type="submit">Search</button>
-    </form>
+   <div>
+       <h1>Free Maps</h1>
+       <div className="box">
+           <input type="text" name=""></input>
+           <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+       </div>
+   </div>
   );
 }
 

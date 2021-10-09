@@ -2,6 +2,7 @@
 // import React, { useEffect } from 'react';
 // import { func } from 'prop-types';
 import React from 'react';
+import "./components/Search/style.css"
 // import WebFont from 'webfontloader';
 // import './index.scss';
 
