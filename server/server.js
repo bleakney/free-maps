@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('*', (req, res) => {
         //uncomment it once the client side is done
- // res.sendFile(path.join(__dirname, '../client/build/index.html'));
+ res.sendFile(path.join(__dirname, '../client/build/index.html'));
 })
 
 
