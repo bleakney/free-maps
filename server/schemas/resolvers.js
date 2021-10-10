@@ -46,8 +46,7 @@ const resolvers = {
                 { $addToSet: {savedItems: input} },
                 { new: true } 
             ).populate("savedItems")
-            return updatedUser;
-        }
+            return updatedUser;       }
         throw new AuthenticationError('You need to be logged in!')
     }}
 }
