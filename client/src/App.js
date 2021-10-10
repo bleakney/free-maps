@@ -1,22 +1,14 @@
 // import dependencies
-// import React, { useEffect } from 'react';
-// import { func } from 'prop-types';
-// import WebFont from 'webfontloader';
-import React from 'react';
+import React, { useEffect } from 'react';
+import WebFont from 'webfontloader';
+import './index.scss';
 
-// STYLING HERE
-import "./components/Search/style.css";
-import './components/Footer/style.css'; 
-// import './index.scss';
-
-// COMPONENTS HERE
+// import components
 import Map from './components/Map';
 import Header from './components/Header';
-import Search from './components/Search'; 
-import Footer from './components/Footer';
-
 // import { createTheme } from '@mui/material';
 // import { ThemeProvider } from '@emotion/react';
+
 // const darkTheme = createTheme({
 //   palette: {
 //     mode: 'dark'
@@ -25,20 +17,18 @@ import Footer from './components/Footer';
 
 function App() {
   // import google fonts
-  // useEffect(() => {
-  //   WebFont.load({
-  //     google: {
-  //       families: ['Playfair Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900', 'Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900']
-  //     }
-  //   })
-  // })
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Playfair Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900', 'Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900']
+      }
+    })
+  })
   return (
     // <ThemeProvider theme={darkTheme}>
     <div className="app-container">
-       {/* <Header className="header" /> */}
-       <Search/>
-      {/* <Map /> */}
-      < Footer />
+       <Header className="header" />
+      <Map />
     </div>
     // </ThemeProvider>
   );
