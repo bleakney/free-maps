@@ -2,13 +2,26 @@ import React, { useState } from 'react';
 import ModalUnstyled from '@mui/core/ModalUnstyled'
 import { styled, Box } from '@mui/system';
 import LoginForm from '../LoginForm';
+import SignupForm from '../SignupForm';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import {css} from '@emotion/react';
 
 function Header(props) {
 
-    const StyledModal = styled(ModalUnstyled)`
+    const LoginModal = styled(ModalUnstyled)`
+    position: fixed;
+    z-index: 1300;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    `;
+
+    const SignupModal = styled(ModalUnstyled)`
     position: fixed;
     z-index: 1300;
     right: 0;
@@ -58,7 +71,7 @@ function Header(props) {
                     <button className="nav-link" type="button" onClick={handleOpen}>
                         sign in
                     </button>
-                    <StyledModal 
+                    <LoginModal 
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="login form"
@@ -67,11 +80,20 @@ function Header(props) {
                         <Box sx={style}>
                         <LoginForm />
                         </Box>
-                        </StyledModal>
-                    <span className="nav-link nav-signup">
+                        </LoginModal>
+                    <button className="nav-link nav-signup" onClick={handleOpen}>
                         new user
-                    </span>
-
+                    </button>
+                    <SignupModal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="signup form"
+                        BackdropComponent={Backdrop}
+                        >
+                        <Box sx={style}>
+                            <SignupForm />
+                    </Box>
+                    </SignupModal>
                 </div>
                 </div>
             </nav>
