@@ -27,7 +27,7 @@ type Items {
   }
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!, phone: String!, location: String!): Auth
     saveItems(title: String!, description: String!, image: String!, status: String!,quantity:String): User
     searchItems(title: String!): User
 

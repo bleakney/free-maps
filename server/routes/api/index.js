@@ -1,5 +1,5 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 
-const { authMiddleware } = require('../../utils/auth');
+// const { authMiddleware } = require('../../utils/auth');
 
-module.exports = router;
+// module.exports = router;
