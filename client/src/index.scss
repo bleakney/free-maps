@@ -25,6 +25,13 @@ nav {
     box-shadow: 0px 3px 3px $blue-contrast;
     margin-bottom: .5rem;
     
+    button {
+        text-decoration: inherit;
+        border: inherit;
+        background-color: inherit;
+        font: inherit;
+        color: inherit;
+    }
 
     .navbar {
         display: flex;
