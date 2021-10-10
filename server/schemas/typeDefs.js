@@ -18,7 +18,7 @@ type Items {
     status: String
     quantity: String
   }
-  type Auth {
+  type Auth { 
     token: ID!
     user: User
   }
