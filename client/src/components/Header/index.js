@@ -3,9 +3,8 @@ import ModalUnstyled from '@mui/core/ModalUnstyled'
 import { styled, Box } from '@mui/system';
 import LoginForm from '../LoginForm';
 import SignupForm from '../SignupForm';
-// import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import {css} from '@emotion/react';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
 function Header(props) {
 
@@ -54,26 +53,33 @@ function Header(props) {
         borderRadius: 3,
       };
     
-    // set modal visibility state
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    // set login modal visibility state
+    const [openLogin, setOpenLogin] = useState(false);
+    const handleLoginOpen = () => setOpenLogin(true);
+    const handleLoginClose = () => setOpenLogin(false);
+    // set signup modal visibility stat
+    const [openSignup, setOpenSignup] = useState(false);
+    const handleSignupOpen = () => setOpenSignup(true);
+    const handleSignupClose = () => setOpenSignup(false);
+
 
     return (
         <header>
             <nav>
                 <div className="navbar">
-                {/* <IconButton>
-                    <MenuIcon />
-                </IconButton> */}
+                    <div className="nav-left">
+                <IconButton>
+                    <MenuIcon sx={{color: 'rgb(191, 171, 171)'}}/>
+                </IconButton>
                 <h4 className="nav-title">freesource maps</h4>
+                </div>
                 <div className="nav-list">
-                    <button className="nav-link" type="button" onClick={handleOpen}>
+                    <button className="nav-link" type="button" onClick={handleLoginOpen}>
                         sign in
                     </button>
                     <LoginModal 
-                    open={open}
-                    onClose={handleClose}
+                    open={openLogin}
+                    onClose={handleLoginClose}
                     aria-labelledby="login form"
                     BackdropComponent={Backdrop}
                     >
@@ -81,12 +87,12 @@ function Header(props) {
                         <LoginForm />
                         </Box>
                         </LoginModal>
-                    <button className="nav-link nav-signup" onClick={handleOpen}>
+                    <button className="nav-link nav-signup" onClick={handleSignupOpen}>
                         new user
                     </button>
                     <SignupModal
-                        open={open}
-                        onClose={handleClose}
+                        open={openSignup}
+                        onClose={handleSignupClose}
                         aria-labelledby="signup form"
                         BackdropComponent={Backdrop}
                         >
