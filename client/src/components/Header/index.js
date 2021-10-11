@@ -5,6 +5,8 @@ import LoginForm from '../LoginForm';
 import SignupForm from '../SignupForm';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import MenuDrawer from '../MenuDrawer';
+
 
 function Header(props) {
 
@@ -54,21 +56,24 @@ function Header(props) {
       };
     
     // set login modal visibility state
-    const [openLogin, setOpenLogin] = useState(false);
-    const handleLoginOpen = () => setOpenLogin(true);
-    const handleLoginClose = () => setOpenLogin(false);
-    // set signup modal visibility stat
-    const [openSignup, setOpenSignup] = useState(false);
-    const handleSignupOpen = () => setOpenSignup(true);
-    const handleSignupClose = () => setOpenSignup(false);
-
+    const [openLogin, setLoginOpen] = useState(false);
+    const handleLoginOpen = () => setLoginOpen(true);
+    const handleLoginClose = () => setLoginOpen(false);
+    // set signup modal visibility state
+    const [openSignup, setSignupOpen] = useState(false);
+    const handleSignupOpen = () => setSignupOpen(true);
+    const handleSignupClose = () => setSignupOpen(false);
+    // set drawer visibility state
+    const [openDrawer, setDrawerOpen] = useState(false);
+    const handleDrawerOpen = () => setDrawerOpen(true);
 
     return (
         <header>
             <nav>
                 <div className="navbar">
                     <div className="nav-left">
-                <IconButton>
+
+                <IconButton onClick={handleDrawerOpen}>
                     <MenuIcon sx={{color: 'rgb(191, 171, 171)'}}/>
                 </IconButton>
                 <h4 className="nav-title">freesource maps</h4>
@@ -103,6 +108,12 @@ function Header(props) {
                 </div>
                 </div>
             </nav>
+            <MenuDrawer 
+                variant="persistent"
+                anchor="left"
+                openDrawer={openDrawer}
+                setDrawerOpen={setDrawerOpen}
+                />
         </header>
     )
 };

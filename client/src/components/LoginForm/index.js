@@ -63,7 +63,7 @@ const LoginForm = () => {
         />
         <label>password</label>
         </div>
-        <button className="login-btn" type="submit">
+        <button className="modal-btn" type="submit">
           submit
         </button>
       </form>
