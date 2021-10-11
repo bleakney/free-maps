@@ -9,6 +9,7 @@ const Home = () => {
 
     const items = data?.items || [];
 
+    // find out styling classname and additional info that needs to be added
     // return (
     //     <main>
     //     <div>
