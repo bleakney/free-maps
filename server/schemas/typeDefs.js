@@ -12,6 +12,7 @@ type User{
 }
 
 type Items {
+    _id:ID
     title: String
     description: String
     image: String
