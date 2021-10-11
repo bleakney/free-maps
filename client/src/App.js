@@ -6,6 +6,10 @@ import './index.scss';
 // import components
 import Map from './components/Map';
 import Header from './components/Header';
+
+//footer components
+import Footer from './components/Footer';
+import '../src/components/Footer/style.css'
 // import { createTheme } from '@mui/material';
 // import { ThemeProvider } from '@emotion/react';
 
@@ -29,6 +33,7 @@ function App() {
     <div className="app-container">
        <Header className="header" />
       <Map />
+      <Footer/>
     </div>
     // </ThemeProvider>
   );
