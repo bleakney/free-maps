@@ -12,11 +12,8 @@ import Header from './components/Header';
 // import { ThemeProvider } from '@emotion/react';
 
 //import pages
-import Home from "./pages/Home";
-import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
-import SingleItem from "./pages/SingleItem";
-import Signup from "./pages/Signup";
+
 
 // should we have a profile page?
 
@@ -43,9 +40,7 @@ function App() {
     <ApolloProvider client={client}>
     <Router>
     <Switch>
-  {/* <Route exact path="/" component={Home} /> */}
-    <Route exact path="/login" component={Login} />
-    <Route exact path="/signup" component={Signup} />
+  
     <Route component={NoMatch} />  
 
     {/* <ThemeProvider theme={darkTheme}> */}
