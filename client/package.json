@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@apollo/client": "^3.4.16",
     "@apollo/react-hooks": "^3.1.5",
     "@deck.gl/react": "^8.5.10",
     "@emotion/react": "^11.4.1",
