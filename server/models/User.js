@@ -7,43 +7,28 @@ const userSchema = new Schema(
     username: {
       type: String,
       required: true,
-      allowNull: false,
-      unique: true,
-      validate: {
-        len: [3]
-    }
+      unique: true     
     },
     email: {
       type: String,
-      allowNull: false,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, 'Must use a valid email address'],
-      validate: {
-        len: [5]
-    }
+      match: [/.+@.+\..+/, 'Must use a valid email address']
+    
     },
     password: {
       type: String,
-      allowNull: false,
-      required: true,
-      validate: {
-        len: [8]
-    }
+      required: true     
     },
     phone: {
       type: String,
-      required: true,
-      match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
-        , 'Must use a valid phone number'],
+     // required: true,
+      match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/    , 'Must use a valid phone number']
     },
     location: {
       type: String,
-      allowNull: false,
-      required: true,
-      validate: {
-        len: [10]
-    }
+     // required: true,
+     
     },
     // set savedItems to be an array of data that adheres to the ItemsSchema
     savedItems: [itemSchema],

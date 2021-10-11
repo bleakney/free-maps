@@ -1,0 +1,24 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(191, 171, 171);
+    color: rgb(6, 30, 54);
+    text-align: center;
+  }
+
+button {
+    background-color: rgba(166, 216, 254);
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    padding: 8px;
+    color: rgb(6, 30, 54);
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: rgb(242, 246, 248, 0.76);
+}
