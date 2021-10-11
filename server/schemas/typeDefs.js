@@ -12,13 +12,14 @@ type User{
 }
 
 type Items {
+    _id:ID
     title: String
     description: String
     image: String
     status: String
     quantity: String
   }
-  type Auth {
+  type Auth { 
     token: ID!
     user: User
   }

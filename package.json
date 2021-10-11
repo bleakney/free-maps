@@ -2,7 +2,7 @@
   "name": "free-maps",
   "version": "1.0.0",
   "description": "## Find free items on the go! Check out the free-maps, someone elses trash may be the item you need!",
-  "main": "index.js",
+  "main": "server/server.js",
   "dependencies": {},
   "devDependencies": {
     "concurrently": "^5.1.0"
@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/bleakney/free-maps/issues"
   },
-  "homepage": "https://github.com/bleakney/free-maps#readme"
+  "homepage": "https://github.com/bleakney/free-maps#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "if-env": "^1.0.4"
+  }
 }

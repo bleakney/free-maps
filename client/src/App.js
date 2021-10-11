@@ -16,6 +16,9 @@ import WebFont from "webfontloader";
 import Map from "./components/Map";
 import Header from "./components/Header";
 
+//import pages
+import NoMatch from "./pages/NoMatch";
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -36,6 +39,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+  
   // import google fonts
   useEffect(() => {
     WebFont.load({
