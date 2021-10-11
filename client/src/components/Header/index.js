@@ -74,12 +74,6 @@ function Header(props) {
                 <IconButton onClick={handleDrawerOpen}>
                     <MenuIcon sx={{color: 'rgb(191, 171, 171)'}}/>
                 </IconButton>
-                <MenuDrawer 
-                variant="persistent"
-                anchor="left"
-                openDrawer={openDrawer}
-                setDrawerOpen={setDrawerOpen}
-                />
                 <h4 className="nav-title">freesource maps</h4>
                 </div>
                 <div className="nav-list">
@@ -112,6 +106,12 @@ function Header(props) {
                 </div>
                 </div>
             </nav>
+            <MenuDrawer 
+                variant="persistent"
+                anchor="left"
+                openDrawer={openDrawer}
+                setDrawerOpen={setDrawerOpen}
+                />
         </header>
     )
 };
