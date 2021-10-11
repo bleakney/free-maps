@@ -3,10 +3,12 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     background-color: rgb(191, 171, 171);
     color: rgb(6, 30, 54);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
   }
 
 button {
@@ -24,10 +26,10 @@ button:hover {
 }
 
 .donate {
-    padding-bottom: 8px;
+    padding-right: inherit;
 }
 
-a#github-icon {
-    color: rgb(6, 30, 54);
+a.social-icon {
+    margin-right: .25em;
 }
 
