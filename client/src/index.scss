@@ -26,6 +26,13 @@ nav {
     box-shadow: 0px 3px 3px $blue-contrast;
     margin-bottom: .5rem;
     
+    button {
+        text-decoration: inherit;
+        border: inherit;
+        background-color: inherit;
+        font: inherit;
+        color: inherit;
+    }
 
     .navbar {
         display: flex;
@@ -34,10 +41,15 @@ nav {
         justify-content: space-between;
         margin: 0 1rem 0 1rem;
     }
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
 
     .nav-title {
         font-weight: 600;
         text-shadow: .125rem .125rem $redgray-light;
+        margin-left: 1rem;
     }
     .nav-title:hover, .nav-link:hover {
         cursor: pointer;
@@ -62,5 +74,49 @@ nav {
         background-color: $redgray-dark;
         color: $redgray-light;
         text-shadow: .125rem .125rem $redgray-dark;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-title, .input-container label {
+    text-shadow: -.125rem .125rem $redgray-light;
+    }
+
+    .input-container {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .input-container label {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: all 0.33s ease-in-out;
+        pointer-events: none;
+    }
+
+    .form-input {
+        border: none;
+        border-bottom: 2px solid rgba(239, 235, 239, .5);
+        color: $redgray-dark;
+        background-color: transparent;
+        width: 100%;
+        padding: .5rem 0 .5rem 0;
+        font-size: 1rem;
+    }
+    .form-input:focus {
+        border: none;
+        outline: none;
+        border-bottom:  2px solid $redgray-light;
+    }
+    .form-input:focus ~ label,
+    .form-input:valid ~ label
+     {
+        top: -.75rem;
+        font-size: .75rem;
     }
 }
