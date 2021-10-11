@@ -44,6 +44,7 @@ nav {
     .nav-left {
         display: flex;
         align-items: center;
+        justify-content: space-around;
     }
 
     .nav-title {
@@ -89,6 +90,7 @@ form {
     .input-container {
         position: relative;
         margin-bottom: 1rem;
+        width: 100%;
     }
 
     .input-container label {
@@ -99,7 +101,7 @@ form {
         pointer-events: none;
     }
 
-    .form-input {
+    .form-input, .modal-btn {
         border: none;
         border-bottom: 2px solid rgba(239, 235, 239, .5);
         color: $redgray-dark;
@@ -119,12 +121,23 @@ form {
         top: -.75rem;
         font-size: .75rem;
     }
+    .modal-btn {
+        border: 1px solid $redgray-dark;
+        padding: .5rem;
+        border-radius: 8px;;
+    }
+    .modal-btn:hover {
+    background-color: $redgray-dark;
+        color: $redgray-light;
+    }
 }
 
 .Mui-selected {
     color: $redgray-dark !important;
 }
-
+.MuiTouchRipple-root {
+    color: inherit !important;
+}
 
 
 
