@@ -1,19 +1,28 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import IconButton from '@mui/material/IconButton'
 import Divider from '@mui/material/Divider';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 
 const drawerWidth = "30vw";
 
 
 function MenuDrawer(props) {
+    // import useState function to toggle drawer visibility
     const {
         openDrawer,
         setDrawerOpen
     } = props;
     const handleDrawerClose = () => setDrawerOpen(false);
+
+    // toggle Tabs
+    const [tabValue, setTabValue] = useState('1');
+    const handleChange = (event, newValue) => setTabValue(newValue);
 
     return (
     <Drawer 
@@ -34,8 +43,22 @@ function MenuDrawer(props) {
                 <ChevronLeftIcon />
             </IconButton>
         </div>
+        <Box sx={{ width: '100%'}}>
+      <TabContext value={tabValue}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="View All" value="1" />
+            <Tab label="Your Pins" value="2" />
+            <Tab label="Saved Pins" value="3" />
+          </TabList>
+        </Box>
+        <TabPanel value="1">Item One</TabPanel>
+        <TabPanel value="2">Item Two</TabPanel>
+        <TabPanel value="3">Item Three</TabPanel>
+      </TabContext>
+    </Box>
         <Divider />
-        
+
     </Drawer>
     )
 }
