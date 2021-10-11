@@ -45,7 +45,8 @@ function App() {
     <Switch>
   {/* <Route exact path="/" component={Home} /> */}
     <Route exact path="/login" component={Login} />
-    <Route exact path="/signup" component={Signup} />  
+    <Route exact path="/signup" component={Signup} />
+    <Route component={NoMatch} />  
 
     {/* <ThemeProvider theme={darkTheme}> */}
     <div className="app-container">
