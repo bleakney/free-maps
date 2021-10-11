@@ -25,8 +25,12 @@ import Signup from "./pages/Signup";
 //     mode: 'dark'
 //   }
 // });
+const client = new ApolloClient({
+  uri: "/graphql",
+});
 
 function App() {
+  
   // import google fonts
   useEffect(() => {
     WebFont.load({
@@ -36,12 +40,24 @@ function App() {
     })
   })
   return (
-    // <ThemeProvider theme={darkTheme}>
+    <ApolloProvider client={client}>
+    <Router>
+    <Switch>
+  {/* <Route exact path="/" component={Home} /> */}
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/signup" component={Signup} />  
+
+    {/* <ThemeProvider theme={darkTheme}> */}
     <div className="app-container">
        <Header className="header" />
       <Map />
     </div>
-    // </ThemeProvider>
+    {/* </ThemeProvider> */}
+
+    </Switch>
+    </Router>
+    </ApolloProvider>
+     
   );
 }
 
