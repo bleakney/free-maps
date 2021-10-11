@@ -23,6 +23,10 @@ button:hover {
     background-color: rgb(242, 246, 248, 0.76);
 }
 
+.donate {
+    padding-bottom: 8px;
+}
+
 a#github-icon {
     color: rgb(6, 30, 54);
 }

@@ -1,15 +1,19 @@
 import React from "react";
-import { LogoGithubIcon } from '@primer/octicons-react';
+import { SocialIcon } from "react-social-icons";
 
 function Footer() {
-    return (
-        <div class="footer">
-            <button>Donate Here</button>
-            <div className="icon-logos">
-           <a id="github-icon" href="https://github.com/bleakney/free-maps" target="_blank"> <LogoGithubIcon size={16}/></a>
-            </div>
-        </div>
-    );
-  }
-  
-  export default Footer;
+  return (
+    <div className="footer">
+      <div className="donate">
+        <button id="donate-button">Donate Here</button>
+      </div>
+      <div className="icon-logos">
+        <SocialIcon url="https://github.com/bleakney/free-maps" />
+        <SocialIcon url="https://twitter.com/" />
+        <SocialIcon url="https://linkedin.com/" />
+      </div>
+    </div>
+  );
+}
+
+export default Footer;
