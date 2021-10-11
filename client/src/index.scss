@@ -40,10 +40,15 @@ nav {
         justify-content: space-between;
         margin: 0 1rem 0 1rem;
     }
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
 
     .nav-title {
         font-weight: 600;
         text-shadow: .125rem .125rem $redgray-light;
+        margin-left: 1rem;
     }
     .nav-title:hover, .nav-link:hover {
         cursor: pointer;
@@ -70,3 +75,4 @@ nav {
         text-shadow: .125rem .125rem $redgray-dark;
     }
 }
+
