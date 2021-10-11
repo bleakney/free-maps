@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuDrawer from '../MenuDrawer';
 
+
 function Header(props) {
 
     const LoginModal = styled(ModalUnstyled)`
@@ -71,6 +72,7 @@ function Header(props) {
             <nav>
                 <div className="navbar">
                     <div className="nav-left">
+
                 <IconButton onClick={handleDrawerOpen}>
                     <MenuIcon sx={{color: 'rgb(191, 171, 171)'}}/>
                 </IconButton>

@@ -90,6 +90,7 @@ form {
     .input-container {
         position: relative;
         margin-bottom: 1rem;
+
         width: 100%;
     }
 
@@ -100,6 +101,7 @@ form {
         transition: all 0.33s ease-in-out;
         pointer-events: none;
     }
+
 
     .form-input, .modal-btn {
         border: none;
@@ -138,6 +140,3 @@ form {
 .MuiTouchRipple-root {
     color: inherit !important;
 }
-
-
-
