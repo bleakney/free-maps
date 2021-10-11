@@ -46,7 +46,7 @@ function Header(props) {
     const style = {
         width: "20vw",
         height: "20vw",
-        bgcolor: '#efebef',
+        bgcolor: 'rgb(194, 228, 255)',
         p: 2,
         px: 4,
         pb: 3,

@@ -43,33 +43,46 @@ const SignupForm = () => {
   return (
     <div className="signup-container">
       <form onSubmit={signupFormHandler}>
+          <h3 className="form-title">Create an account</h3>
+          <div className="input-container">
         <input
           className="form-input"
-          placeholder="username"
+        //   placeholder="username"
           name="username"
+          required="required"
           type="username"
           id="username"
           value={formState.username}
           onChange={handleInputChange}
         />
+         <label>username</label>
+        </div>
+        <div className="input-container">
         <input
           className="form-input"
-          placeholder="username@email.com"
+        //   placeholder="username@email.com"
           name="email"
+          required="required"
           type="email"
           id="email"
           value={formState.email}
           onChange={handleInputChange}
         />
+        <label>email</label>
+        </div>
+        <div className="input-container">
         <input
           className="form-input"
-          placeholder="password"
+        //   placeholder="password"
           name="password"
+          required="required"
           type="password"
           id="password"
           value={formState.password}
           onChange={handleInputChange}
         />
+        <label>password</label>
+        </div>
         <button className="signup-btn" type="submit">
           submit
         </button>

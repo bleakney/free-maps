@@ -38,24 +38,31 @@ const LoginForm = () => {
   return (
     <div className="login-container">
       <form onSubmit={loginFormHandler}>
+      <h3 className="form-title">Log in</h3>
+        <div className="input-container">
         <input
           className="form-input"
-          placeholder="username@email.com"
+          required="required"
           name="email"
           type="email"
           id="email"
           value={formState.email}
           onChange={handleInputChange}
         />
+        <label>username</label>
+        </div>
+        <div className="input-container">
         <input
           className="form-input"
-          placeholder="password"
+          required="required"
           name="password"
           type="password"
           id="password"
           value={formState.password}
           onChange={handleInputChange}
         />
+        <label>password</label>
+        </div>
         <button className="login-btn" type="submit">
           submit
         </button>
