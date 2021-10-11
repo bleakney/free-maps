@@ -36,8 +36,18 @@ const resolvers = {
             const token = signToken(user);
 
             return { token, user };
-        }
+        },
     
-    }
+    
+    saveItems: async (parent, { input }, context) => {
+        if (context.user) {
+            const updatedUser = await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $addToSet: {savedItems: input} },
+                { new: true } 
+            ).populate("savedItems")
+            return updatedUser;       }
+        throw new AuthenticationError('You need to be logged in!')
+    }}
 }
 module.exports = resolvers;

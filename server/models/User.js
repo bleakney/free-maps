@@ -22,12 +22,12 @@ const userSchema = new Schema(
     },
     phone: {
       type: String,
-      required: true,
+     // required: true,
       match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/    , 'Must use a valid phone number']
     },
     location: {
       type: String,
-      required: true,
+     // required: true,
      
     },
     // set savedItems to be an array of data that adheres to the ItemsSchema

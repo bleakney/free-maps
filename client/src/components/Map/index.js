@@ -2,6 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import ReactMapGL from 'react-map-gl'; 
 
+const testItem = {
+  
+}
+
 function Map() {
   const [viewport, setViewport] = useState({
     latitude: 30.266013,
