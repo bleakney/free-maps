@@ -12,3 +12,7 @@ export const QUERY_ITEMS = gql`
     }
   }
 `;
+
+export const QUERY_USER = gql` 
+
+`
