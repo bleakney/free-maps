@@ -1,5 +1,7 @@
 // import dependencies
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ApolloProvider } from "@apollo/react-hooks";
 import WebFont from 'webfontloader';
 import './index.scss';
 
@@ -8,6 +10,15 @@ import Map from './components/Map';
 import Header from './components/Header';
 // import { createTheme } from '@mui/material';
 // import { ThemeProvider } from '@emotion/react';
+
+//import pages
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NoMatch from "./pages/NoMatch";
+import SingleItem from "./pages/SingleItem";
+import Signup from "./pages/Signup";
+
+// should we have a profile page?
 
 // const darkTheme = createTheme({
 //   palette: {
