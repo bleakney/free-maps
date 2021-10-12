@@ -5,8 +5,8 @@ import {faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
 
 function Search() {
   return (
-    <div>
-      <FontAwesomeIcon icon={faMapMarkerAlt} size="5x" color="rgb(116, 216,254)" alignmentBaseline="central"> </FontAwesomeIcon> 
+    <div className="search-page">
+      <FontAwesomeIcon icon={faMapMarkerAlt} size="5x" color="rgb(194, 228, 255)" alignmentBaseline="central"> </FontAwesomeIcon> 
       <h1>Free Maps</h1>
       <div className="box">
         <FontAwesomeIcon icon={faSearch} size="2x"></FontAwesomeIcon>

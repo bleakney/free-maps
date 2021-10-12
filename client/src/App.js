@@ -13,8 +13,14 @@ import "./index.scss";
 import WebFont from "webfontloader";
 
 // import components
+
+//footer 
 import Footer from './components/Footer';
 import '../src/components/Footer/style.css'
+
+//search
+import Search from './components/Search';
+
 import Map from "./components/Map";
 import Header from "./components/Header";
 
@@ -57,6 +63,7 @@ function App() {
     <ApolloProvider client={client}>
     <div className="app-container">
       <Header className="header" />
+      <Search />
       <Map />
       <Footer/>
     </div>
