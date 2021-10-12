@@ -13,6 +13,8 @@ import "./index.scss";
 import WebFont from "webfontloader";
 
 // import components
+import Footer from './components/Footer';
+import '../src/components/Footer/style.css'
 import Map from "./components/Map";
 import Header from "./components/Header";
 
@@ -56,6 +58,7 @@ function App() {
     <div className="app-container">
       <Header className="header" />
       <Map />
+      <Footer/>
     </div>
     </ApolloProvider>
   );
