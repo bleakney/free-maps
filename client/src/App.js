@@ -10,8 +10,21 @@ import { setContext } from "@apollo/client/link/context";
 // stylesheet and fonts
 import "./index.scss";
 import WebFont from "webfontloader";
+<<<<<<< HEAD
 // components
 import Footer from './components/Footer';
+=======
+
+// import components
+
+//footer 
+import Footer from './components/Footer';
+import '../src/components/Footer/style.css'
+
+//search
+import Search from './components/Search';
+
+>>>>>>> ca9fe989b64d31ba671799e1c78b2fd6c2541c01
 import Map from "./components/Map";
 import Header from "./components/Header";
 // pages
@@ -55,6 +68,7 @@ function App() {
     <ApolloProvider client={client}>
     <div className="app-container">
       <Header className="header" />
+      <Search />
       <Map />
       <Footer/>
     </div>

@@ -76,11 +76,11 @@ function Header(props) {
                 <IconButton onClick={handleDrawerOpen}>
                     <MenuIcon sx={{color: 'rgb(191, 171, 171)'}}/>
                 </IconButton>
-                <h4 className="nav-title">freesource maps</h4>
+                <h4 className="nav-title">Free Maps</h4>
                 </div>
                 <div className="nav-list">
                     <button className="nav-link" type="button" onClick={handleLoginOpen}>
-                        sign in
+                        Sign In
                     </button>
                     <LoginModal 
                     open={openLogin}
@@ -93,7 +93,7 @@ function Header(props) {
                         </Box>
                         </LoginModal>
                     <button className="nav-link nav-signup" onClick={handleSignupOpen}>
-                        new user
+                        New User
                     </button>
                     <SignupModal
                         open={openSignup}
