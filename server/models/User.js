@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const itemSchema = require('./Items');
 
 const userSchema = new Schema(
   {
@@ -18,29 +17,41 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: true     
+      required: true,
+      minlength: 5
     },
-    phone: {
-      type: String,
-     // required: true,
-      match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/    , 'Must use a valid phone number']
-    },
-    location: {
-      type: String,
-     // required: true,
+    // phone: {
+    //   type: String,
+    //  // required: true,
+    //   match: [/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/    , 'Must use a valid phone number']
+    // },
+    // location: {
+    //   type: String,
+    //  // required: true,
      
-    },
+    // },
     // set savedItems to be an array of data that adheres to the ItemsSchema
-    savedItems: [itemSchema],
+    savedItems: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Item'
+      }
+    ],
+    postedItems: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Item'
+      }
+    ],
     //donation that user is making that adhere to the itemSchemas
-    donation: [itemSchema]
+    // donation: [itemSchema]
   },
   // set this to use virtual below
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
+  // {
+  //   toJSON: {
+  //     virtuals: true,
+  //   },
+  // }
 );
 
 // hash user password

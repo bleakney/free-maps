@@ -7,8 +7,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-
-// import stylesheet and fonts
+// stylesheet and fonts
 import "./index.scss";
 import WebFont from "webfontloader";
 
@@ -23,10 +22,11 @@ import Search from './components/Search';
 
 import Map from "./components/Map";
 import Header from "./components/Header";
-
-//import pages
+// pages
 import NoMatch from "./pages/NoMatch";
 
+
+// set up server with @apollo/client
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
