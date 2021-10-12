@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import ReactMapGL from 'react-map-gl'; 
+import IconButton from '@mui/material/IconButton';
 import MapPins from '../MapPins';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const testItems = [
   {"item": "couch","latitude":30.230015,"longitude":-97.824436},
@@ -26,7 +28,13 @@ function Map() {
       mapboxApiAccessToken="pk.eyJ1IjoiYmxlYWtuZXkiLCJhIjoiY2t1ZzJjb2RiMjBjMTJvbzhubnNqdWlncSJ9.NC3BTCx2RMAohqDdk2BW9A"
       onViewportChange={nextViewport => setViewport(nextViewport)}
     >
+      <div className="addPinBtnContainer">
+      <IconButton>
+      <AddCircleIcon sx={{fontSize: '4vw', color: 'rgb(191, 171, 171)'}}/>
+      </IconButton>
+      </div>
       <MapPins data={testItems} />
+
       </ReactMapGL>
     </div>
   );
