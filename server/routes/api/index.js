@@ -1,11 +1,11 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 
-const { authMiddleware } = require('../../utils/auth');
+// const { authMiddleware } = require('../../utils/auth');
 
-router.route('/').post(createUser).put(authMiddleware, saveBook);
+// router.route('/').post(createUser).put(authMiddleware, saveBook);
 
-router.route('/login').post(login);
+// router.route('/login').post(login);
 
-router.route('/me').get(authMiddleware, getSingleUser);
+// router.route('/me').get(authMiddleware, getSingleUser);
 
-module.exports = router;
+// module.exports = router;
