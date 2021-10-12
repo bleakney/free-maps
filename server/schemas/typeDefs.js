@@ -25,6 +25,8 @@ type Items {
   }
   type Query {
     me: User
+    items(User):item
+    location(user:[location]!): Location 
   }
   type Mutation {
     login(email: String!, password: String!): Auth
