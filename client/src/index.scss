@@ -1,9 +1,8 @@
-@import 'mapbox-gl/dist/mapbox-gl.css';
+@import "mapbox-gl/dist/mapbox-gl.css";
 
 // FONT VARIABLES
-$serif: 'Playfair Display', serif;
-$sans-serif: 'Poppins', sans-serif;
-
+$serif: "Playfair Display", serif;
+$sans-serif: "Poppins", sans-serif;
 
 // COLOR VARIABLES
 $blue-dark: rgb(6, 30, 54);
@@ -12,131 +11,252 @@ $blue-contrast: rgb(166, 216, 254);
 $redgray-dark: rgb(191, 171, 171);
 $redgray-light: rgb(239, 235, 239);
 
-body, nav {
-    background-color: $blue-light;
-    color: $redgray-dark;
-    font-family: $sans-serif;
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $sans-serif;
 }
 
 nav {
-    background-color: $blue-light;
-    color: $redgray-dark;
+  background-color: $blue-light;
+  color: $blue-dark;
+  font-family: $sans-serif;
+  font-weight: 500;
+  //   box-shadow: 0.125rem 0.125rem $redgray-light;
+  padding-bottom: 0.5rem;
+}
+
+nav {
+  button {
+    text-decoration: inherit;
+    border: inherit;
+    background-color: inherit;
+    font: inherit;
+    color: inherit;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1rem 0 1rem;
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .nav-title {
     font-weight: 500;
-    box-shadow: 0px 3px 3px $blue-contrast;
-    margin-bottom: .5rem;
-    
-    button {
-        text-decoration: inherit;
-        border: inherit;
-        background-color: inherit;
-        font: inherit;
-        color: inherit;
-    }
+    // text-shadow: 0.125rem 0.125rem $redgray-light;
+    margin-left: 0.25rem;
+  }
+  .nav-title:hover,
+  .nav-link:hover {
+    cursor: pointer;
+    text-shadow: -0.125rem 0.125rem $redgray-light;
+  }
 
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0 1rem 0 1rem;
-    }
-    .nav-left {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
+  .nav-list {
+    text-align: right;
+  }
 
-    .nav-title {
-        font-weight: 600;
-        text-shadow: .125rem .125rem $redgray-light;
-        margin-left: 1rem;
-    }
-    .nav-title:hover, .nav-link:hover {
-        cursor: pointer;
-        text-shadow: -.125rem .125rem $redgray-light;
-    }
-   
-    .nav-list {
-        text-align: right;
-    }
-    
-    .nav-link {
-        margin-left: 1rem;
+  //   .nav-link {
+  //     margin-left: 1rem;
+  //   }
 
-    }
-
-    .nav-signup {
-        border: 1px solid $redgray-dark;
-        padding: .5rem;
-        border-radius: 30px;
-    }
-    .nav-signup:hover {
-        background-color: $redgray-dark;
-        color: $redgray-light;
-        text-shadow: .125rem .125rem $redgray-dark;
-    }
+  //   .nav-signup {
+  //     border: 1px solid $redgray-dark;
+  //     padding: 0.5rem;
+  //     border-radius: 30px;
+  //   }
+  .nav-signup:hover {
+    background-color: $redgray-dark;
+    color: $redgray-light;
+    text-shadow: 0.125rem 0.125rem $redgray-dark;
+  }
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    .form-title, .input-container label {
-    text-shadow: -.125rem .125rem $redgray-light;
-    }
+  .form-title,
+  .input-container label {
+    text-shadow: -0.125rem 0.125rem $redgray-light;
+  }
 
-    .input-container {
-        position: relative;
-        margin-bottom: 1rem;
+  .input-container {
+    position: relative;
+    margin-bottom: 1rem;
 
-        width: 100%;
-    }
+    width: 100%;
+  }
 
-    .input-container label {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        transition: all 0.33s ease-in-out;
-        pointer-events: none;
-    }
+  .input-container label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: all 0.33s ease-in-out;
+    pointer-events: none;
+  }
 
-
-    .form-input, .modal-btn {
-        border: none;
-        border-bottom: 2px solid rgba(239, 235, 239, .5);
-        color: $redgray-dark;
-        background-color: transparent;
-        width: 100%;
-        padding: .5rem 0 .5rem 0;
-        font-size: 1rem;
-    }
-    .form-input:focus {
-        border: none;
-        outline: none;
-        border-bottom:  2px solid $redgray-light;
-    }
-    .form-input:focus ~ label,
-    .form-input:valid ~ label
-     {
-        top: -.75rem;
-        font-size: .75rem;
-    }
-    .modal-btn {
-        border: 1px solid $redgray-dark;
-        padding: .5rem;
-        border-radius: 8px;;
-    }
-    .modal-btn:hover {
+  .form-input,
+  .modal-btn {
+    border: none;
+    border-bottom: 2px solid rgba(239, 235, 239, 0.5);
+    color: $redgray-dark;
+    background-color: transparent;
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 1rem;
+  }
+  .form-input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid $redgray-light;
+  }
+  .form-input:focus ~ label,
+  .form-input:valid ~ label {
+    top: -0.75rem;
+    font-size: 0.75rem;
+  }
+  .modal-btn {
+    border: 1px solid $redgray-dark;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+  .modal-btn:hover {
     background-color: $redgray-dark;
-        color: $redgray-light;
-    }
+    color: $redgray-light;
+  }
 }
 
 .Mui-selected {
-    color: $redgray-dark !important;
+  color: $redgray-dark !important;
 }
+
 .MuiTouchRipple-root {
-    color: inherit !important;
+  color: inherit !important;
+}
+
+.css-1h88eis-MuiSvgIcon-root {
+  color: $blue-dark !important;
+}
+
+// Search Page Starts Here
+
+.search-page {
+  height: 100vh;
+  width: 100%;
+  padding-top: 8.5em;
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(
+    25deg,
+    rgb(6, 30, 54) 50%,
+    rgba(6, 30, 54, 0.938) 50%
+  );
+}
+
+h1 {
+  font-size: 90px;
+  text-align: center;
+  padding-bottom: 1%;
+  color: rgb(191, 171, 171);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+}
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 1%;
+  color: rgb(191, 171, 171);
+}
+span.search-text {
+  padding-left: 3%;
+  font-size: 16px;
+}
+
+.box {
+  width: 800px;
+  height: 80px;
+  background-color: rgb(191, 171, 171);
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  padding: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+.box > i {
+  font-size: 20px;
+  color: #0000;
+}
+
+.box > input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  background-color: rgb(191, 171, 171);
+  padding-left: 3%;
+}
+
+/* MEDIA QUERIES*/
+
+@media (max-width: 768px) {
+  h1 {
+    padding-bottom: 4%;
+    font-size: 55px;
+  }
+
+  h2 {
+    padding-top: 4%;
+    font-size: 20px;
+  }
+}
+
+/* search bar div*/
+@media (max-width: 768px) {
+  .search-page {
+    padding-top: 11em;
+  }
+  .box {
+    width: 320px;
+    height: 10px;
+    padding: 22px;
+  }
+
+  .box > i {
+    font-size: 20px;
+  }
+
+  .box > input {
+    width: 100%;
+    height: 10px;
+    font-size: 25px;
+  }
+}
+
+/* nav bar*/
+@media (max-width: 768px) {
+  .nav-title {
+    display: none;
+  }
+  .css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+    padding: 0;
+    height: 2em;
+  }
+  button.nav-link {
+    font-size: 15px;
+  }
 }
