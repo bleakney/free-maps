@@ -1,35 +1,52 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type User{
-    _id:ID
-    username:String
-    email:String
-    phone:String
-    location:String
-    savedItems:[Items]
-    donation:[Items]
-}
+  type User {
+    _id: ID
+    username: String
+    email: String
+    phone: String
+    location: String
+    savedItems: [Item]
+    postedItems: [Item]
+  }
 
-type Items {
-    _id:ID
+  type Item {
+    _id: ID
     title: String
     description: String
     image: String
+    createdAt: String
     status: String
+    address: String
     quantity: String
+    postedBy: String
+    coordinates: [Coordinates]
   }
-  type Auth { 
+  type Coordinates {
+    _id: ID
+    longitude: String
+    latitude: String
+  }
+  type Auth {
     token: ID!
     user: User
   }
+
   type Query {
     me: User
   }
+  
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth 
-    saveItems(title: String!, description: String!, image: String!, status: String!,quantity:String): User
+    addUser(username: String!, email: String!, password: String!): Auth
+    saveItems(
+      title: String!
+      description: String!
+      image: String!
+      status: String!
+      quantity: String
+    ): User
     searchItems(title: String!): User
   }
 `;
