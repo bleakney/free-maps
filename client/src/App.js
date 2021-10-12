@@ -10,14 +10,7 @@ import Header from './components/Header';
 //footer components
 import Footer from './components/Footer';
 import '../src/components/Footer/style.css'
-// import { createTheme } from '@mui/material';
-// import { ThemeProvider } from '@emotion/react';
 
-// const darkTheme = createTheme({
-//   palette: {
-//     mode: 'dark'
-//   }
-// });
 
 function App() {
   // import google fonts
@@ -29,13 +22,11 @@ function App() {
     })
   })
   return (
-    // <ThemeProvider theme={darkTheme}>
     <div className="app-container">
        <Header className="header" />
       <Map />
       <Footer/>
     </div>
-    // </ThemeProvider>
   );
 }
 
