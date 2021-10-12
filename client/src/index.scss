@@ -19,24 +19,31 @@ $redgray-light: rgb(239, 235, 239);
 
 body {
   font-family: $sans-serif;
-}
-
-nav {
   background-color: $blue-light;
-  color: $blue-dark;
-  font-family: $sans-serif;
-  font-weight: 500;
-  //   box-shadow: 0.125rem 0.125rem $redgray-light;
-  padding-bottom: 0.5rem;
+}
+
+.map-container {
+    background-color: $blue-light;
 }
 
 nav {
+    background-color: $blue-light;
+    color: $redgray-dark;
+    font-weight: 500;
+    box-shadow: 0px 3px 3px $blue-contrast;
+    padding-bottom: .25rem;
+    margin-bottom: .5rem ;
   button {
-    text-decoration: inherit;
+    text-decoration: none;
     border: inherit;
-    background-color: inherit;
+    background-color: transparent;
     font: inherit;
     color: inherit;
+    cursor: pointer;
+    text-shadow: 0.125rem 0.125rem $redgray-light;
+  }
+  button:hover {
+    text-shadow: -0.125rem 0.125rem $redgray-light;
   }
 
   .navbar {
@@ -44,7 +51,8 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 0 1rem 0 1rem;
+    margin: 0rem 1rem 0 1rem;
+    padding-top: .25rem
   }
   .nav-left {
     display: flex;
@@ -54,11 +62,12 @@ nav {
 
   .nav-title {
     font-weight: 500;
-    // text-shadow: 0.125rem 0.125rem $redgray-light;
-    margin-left: 0.25rem;
+    text-shadow: 0.125rem 0.125rem $redgray-light;
+    margin-left: 1rem;
   }
   .nav-title:hover,
-  .nav-link:hover {
+  .nav-link:hover,
+  button:hover {
     cursor: pointer;
     text-shadow: -0.125rem 0.125rem $redgray-light;
   }
@@ -67,15 +76,15 @@ nav {
     text-align: right;
   }
 
-  //   .nav-link {
-  //     margin-left: 1rem;
-  //   }
+    .nav-link {
+      margin-left: 1rem;
+    }
 
-  //   .nav-signup {
-  //     border: 1px solid $redgray-dark;
-  //     padding: 0.5rem;
-  //     border-radius: 30px;
-  //   }
+    .nav-signup {
+      border: 1px solid $redgray-dark;
+      padding: 0.5rem;
+      border-radius: 30px;
+    }
   .nav-signup:hover {
     background-color: $redgray-dark;
     color: $redgray-light;
@@ -148,7 +157,7 @@ form {
 }
 
 .css-1h88eis-MuiSvgIcon-root {
-  color: $blue-dark !important;
+  color: $redgray-dark !important;
 }
 
 // Search Page Starts Here

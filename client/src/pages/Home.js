@@ -1,27 +1,19 @@
 import React from 'react';
+import Search from '../components/Search';
 
-import { useQuery } from "@apollo/react-hooks";
-import { QUERY_ITEMS } from "../utils/queries";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_ITEMS } from "../utils/queries";
 
 const Home = () => {
     // use Query hook to make query req
-    const { loading, data } = useQuery(QUERY_ITEMS);
+    // const { loading, data } = useQuery(QUERY_ITEMS);
 
-    const items = data?.items || [];
+    // const items = data?.items || [];
+    return (
+    <div className="home-container">
+        <Search />
+    </div>
+    )
+};
 
-    // find out styling classname and additional info that needs to be added
-    // return (
-    //     <main>
-    //     <div>
-    //     <div>
-    //     {loading ? (
-    //         <div>Loading...</div>
-    //     ) : (
-            
-    //     )}
-    //     </div>
-    //     </div>
-        
-    //     </main>
-    // )
-}
+export default Home;
