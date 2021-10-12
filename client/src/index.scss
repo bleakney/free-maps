@@ -12,14 +12,13 @@ $redgray-dark: rgb(191, 171, 171);
 $redgray-light: rgb(239, 235, 239);
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: $sans-serif;
-    
+  font-family: $sans-serif;
 }
 
 nav {
@@ -27,7 +26,7 @@ nav {
   color: $blue-dark;
   font-family: $sans-serif;
   font-weight: 500;
-//   box-shadow: 0.125rem 0.125rem $redgray-light;
+  //   box-shadow: 0.125rem 0.125rem $redgray-light;
   padding-bottom: 0.5rem;
 }
 
@@ -56,7 +55,7 @@ nav {
   .nav-title {
     font-weight: 500;
     // text-shadow: 0.125rem 0.125rem $redgray-light;
-    margin-left: .25rem;
+    margin-left: 0.25rem;
   }
   .nav-title:hover,
   .nav-link:hover {
@@ -68,15 +67,15 @@ nav {
     text-align: right;
   }
 
-//   .nav-link {
-//     margin-left: 1rem;
-//   }
+  //   .nav-link {
+  //     margin-left: 1rem;
+  //   }
 
-//   .nav-signup {
-//     border: 1px solid $redgray-dark;
-//     padding: 0.5rem;
-//     border-radius: 30px;
-//   }
+  //   .nav-signup {
+  //     border: 1px solid $redgray-dark;
+  //     padding: 0.5rem;
+  //     border-radius: 30px;
+  //   }
   .nav-signup:hover {
     background-color: $redgray-dark;
     color: $redgray-light;
@@ -149,98 +148,115 @@ form {
 }
 
 .css-1h88eis-MuiSvgIcon-root {
-    color: $blue-dark;
+  color: $blue-dark !important;
 }
 
 // Search Page Starts Here
 
 .search-page {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(
-      25deg,
-      rgb(6, 30, 54) 50%,
-      rgba(6, 30, 54, 0.938) 50%
-    );
+  height: 100vh;
+  width: 100%;
+  padding-top: 8.5em;
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(
+    25deg,
+    rgb(6, 30, 54) 50%,
+    rgba(6, 30, 54, 0.938) 50%
+  );
 }
 
-  h1 {
-    font-size: 100px;
-    text-align: center;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    color: rgb(191, 171, 171);
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
-  }
-  h2 {
-    font-size: 30px;
-    font-weight: 500;
-    text-align: center;
-    padding-top: 2%;
-    color: rgb(191, 171, 171);
-  }
-  span.search-text {
-    padding-left: 3%;
-    font-size: 16px;
-  }
-  
-  .box {
-    width: 800px;
-    height: 80px;
-    background-color: rgb(191, 171, 171);
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    padding: 18px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-  }
-  
-  .box > i {
-    font-size: 20px;
-    color: #0000;
-  }
-  
-  .box > input {
-    flex: 1;
-    height: 40px;
-    border: none;
-    outline: none;
-    font-size: 25px;
-    background-color: rgb(191, 171, 171);
-    padding-left: 3%;
-  }
+h1 {
+  font-size: 90px;
+  text-align: center;
+  padding-bottom: 1%;
+  color: rgb(191, 171, 171);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.35);
+}
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 1%;
+  color: rgb(191, 171, 171);
+}
+span.search-text {
+  padding-left: 3%;
+  font-size: 16px;
+}
 
-  /* MEDIA QUERIES*/
+.box {
+  width: 800px;
+  height: 80px;
+  background-color: rgb(191, 171, 171);
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  padding: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+.box > i {
+  font-size: 20px;
+  color: #0000;
+}
+
+.box > input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  background-color: rgb(191, 171, 171);
+  padding-left: 3%;
+}
+
+/* MEDIA QUERIES*/
 
 @media (max-width: 768px) {
-    h1 {
-      padding-bottom: 4%;  
-      font-size: 55px;
-    }
-  
-    h2 {
-      padding-top: 4%;
-      font-size: 20px;
-    }
+  h1 {
+    padding-bottom: 4%;
+    font-size: 55px;
   }
-  
-  @media (max-width: 768px) {
-    .box {
-      width: 320px;
-      height: 10px;
-      padding: 22px;
-    }
-  
-    .box > i {
-      font-size: 20px;
-    }
-  
-    .box > input {
-      width: 100%;
-      height: 10px;
-      font-size: 25px;
-    }
+
+  h2 {
+    padding-top: 4%;
+    font-size: 20px;
   }
+}
+
+/* search bar div*/
+@media (max-width: 768px) {
+  .search-page {
+    padding-top: 11em;
+  }
+  .box {
+    width: 320px;
+    height: 10px;
+    padding: 22px;
+  }
+
+  .box > i {
+    font-size: 20px;
+  }
+
+  .box > input {
+    width: 100%;
+    height: 10px;
+    font-size: 25px;
+  }
+}
+
+/* nav bar*/
+@media (max-width: 768px) {
+  .nav-title {
+    display: none;
+  }
+  .css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+    padding: 0;
+    height: 2em;
+  }
+  button.nav-link {
+    font-size: 15px;
+  }
+}
