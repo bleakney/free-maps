@@ -20,9 +20,9 @@ const resolvers = {
             .populate("postedItems");
         },
 
-        items: async () => {
-            return Item.find();
-        }
+        // items: async () => {
+        //     return Item.find();
+        // },
         // item: async (parent, { _id }) => {
         //     return Item.findOne({ _id });
         // },
@@ -91,30 +91,37 @@ const resolvers = {
         throw new AuthenticationError('You need to be logged in!')
     }},
 
-    // updateItems: async (parent, { input }, context) => {
+    // updateItems: async (parent, {title, description, status, address, city, state, zipcode, quantity}, context) => {
     //     if (context.user) {
-    //         const updatedUser - await Item.findOneAndUpdate(
-    //             {_id: context.item._id},
-    //             { $push: {postedItems: item._id}},
-    //             { new: true} 
-    //         );
-            
-    //         return item;
-    //     }
-    // },
-
-    // deleteItems: async (parent,{ input }, context) => {
-    //     if (context.user) {
-    //         const updatedUser = await Item.findOneAndDelete(
-    //             {_id: context.item._id},
-    //             { $pull: {postedItems: item._id}},
+    //         const updatedItem = await Item.findOneAndUpdate(
+    //             {title: title},
+    //             {description: description},
+    //             {status: status},
+    //             {address: address},
+    //             {city: city},
+    //             {state: state},
+    //             {zipcode: zipcode},
+    //             {quantity: quantity},
     //             {new: true}
 
     //         );
-
-    //         return item;
+            
+    //         return updatedItem;
     //     }
     // },
+
+    deleteItems: async (parent,{ itemId }, context) => {
+        if (context.user) {
+            const updatedItem = await Item.findByIdAndDelete(
+
+                {_id: item._id},
+                {new: true}
+
+            );
+
+            return updatedItem;
+        }
+    },
     
 }
 module.exports = resolvers;
