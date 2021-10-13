@@ -26,7 +26,6 @@ function AddPinForm() {
   // submit form handler
   const addPinFormHandler = async (e) => {
     e.preventDefault();
-    console.log("in pin form handler");
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -48,10 +47,11 @@ function AddPinForm() {
     }
 
     setFormState({
-      item: "",
-      description: "",
-      address: "",
-      quantity: "",
+    title: "",
+    description: "",
+    status: "",
+    address: "",
+    quantity: "",
     });
   };
 
