@@ -26,18 +26,6 @@ const resolvers = {
         item: async (parent, { _id }) => {
             return Item.findOne({ _id });
         }
-        // item: async (parent, args, context) => {
-        //     if (context.item) {
-        //         const itemData = await Item.findOne({_id: context.user.title})
-        //         return itemData
-        //     }
-        // },
-        // location: async (parent, args, context) => {
-        //     if (context.location) {
-        //         const locationData = await User.findOne({location: context.user.location})
-        //         return locationData
-        //     }
-        // }
     },
     Mutation: {
         addUser: async (parent, args) => {
