@@ -170,6 +170,13 @@ form {
   color: $redgray-dark !important;
 }
 
+.state-zip-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
 // Search Page Starts Here
 
 .search-page {

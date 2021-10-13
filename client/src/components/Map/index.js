@@ -38,7 +38,7 @@ function Map() {
   `;
   const style = {
     width: "30vw",
-    height: "30vw",
+    height: "33vw",
     bgcolor: "rgb(194, 228, 255)",
     p: 2,
     px: 4,
