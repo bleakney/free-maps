@@ -40,7 +40,6 @@ const typeDefs = gql`
     users: [User]
     items: [Item]
 
-    items(title: String): [Item]
     item(_id: ID!): Item
 
   }

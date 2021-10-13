@@ -23,21 +23,23 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .map-container {
-    background-color: $blue-light;
+  background-color: $blue-light;
 }
 
+/*** NAV BAR ***/
+
 nav {
-    background-color: $blue-light;
-    color: $redgray-dark;
-    font-weight: 500;
-    box-shadow: 0px 3px 3px $blue-contrast;
-    padding-bottom: .25rem;
-    margin-bottom: .5rem ;
+  background-color: $blue-light;
+  color: $redgray-dark;
+  font-weight: 500;
+  box-shadow: 0px 3px 3px $blue-contrast;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   button {
     text-decoration: none;
     border: inherit;
@@ -57,7 +59,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     margin: 0rem 1rem 0 1rem;
-    padding-top: .25rem
+    padding-top: 0.25rem;
   }
   .nav-left {
     display: flex;
@@ -81,19 +83,19 @@ nav {
     text-align: right;
   }
 
-    .nav-link {
-      margin-left: 1rem;
-    }
+  .nav-link {
+    margin-left: 1rem;
+  }
 
-    .logout-btn {
-        margin-right: 1rem;
-    }
+  .logout-btn {
+    margin-right: 1rem;
+  }
 
-    .nav-signup {
-      border: 1px solid $redgray-dark;
-      padding: 0.5rem;
-      border-radius: 30px;
-    }
+  .nav-signup {
+    border: 1px solid $redgray-dark;
+    padding: 0.5rem;
+    border-radius: 30px;
+  }
   .nav-signup:hover {
     background-color: $redgray-dark;
     color: $redgray-light;
@@ -170,7 +172,7 @@ form {
   color: $redgray-dark !important;
 }
 
-// Search Page Starts Here
+/*** SEARCH PAGE ***/
 
 .search-page {
   height: 100vh;
@@ -204,6 +206,7 @@ span.search-text {
   font-size: 16px;
 }
 
+/*** SEARCH BAR ***/
 .box {
   width: 800px;
   height: 80px;
@@ -243,7 +246,7 @@ svg.svg-inline--fa.fa-search.fa-w-16.fa-3x {
   background-color: $redgray-dark;
 }
 
-/* FOOTER */
+/*** FOOTER ***/
 
 button#donate-button {
   background-color: $blue-light !important;
@@ -264,11 +267,10 @@ button#donate-button:hover {
 }
 
 a.social-icon {
-  margin-right: .25em;
+  margin-right: 0.25em;
 }
 
-
-/* MEDIA QUERIES*/
+/*** MEDIA QUERIES ***/
 
 @media (max-width: 768px) {
   h1 {
@@ -318,10 +320,10 @@ a.social-icon {
   }
 }
 
-// MAP STYLES
+/*** MAP STYLES ***/
 .addPinBtnContainer {
-    text-align: right;
-    justify-content: flex-end;
-    margin-right: 2rem;
-    margin-top: 1rem;
+  text-align: right;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  margin-top: 1rem;
 }
