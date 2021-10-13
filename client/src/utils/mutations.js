@@ -41,3 +41,39 @@ mutation addItem($title: String!, $description: String!, $status: String!, $addr
     }
   }
 `
+
+// export const DELETE_ITEM = gql `
+// mutation deleteItem($title: String!, $description: String!, $status: String!, address: String!, quantity: String!, username: String!) {
+//     addItem(title: $title, description: $description, status: $status, address: $address, quantity: $quantity){
+//         user {
+//             _id
+//             username
+//         },
+//         item {
+//             _id
+//             title
+//             description
+//             status
+//             address
+//             quantity
+//         }
+//     }
+// }`
+
+// export const SAVE_ITEM = gql `
+// mutation saveItem($title: String!, $description: String!, $status: String!, address: String!, quantity: String) {
+//     addItem(title: $title, description: $description, status: $status, address: $address, quantity: $quantity){
+//         user {
+//             _id
+//             username
+//         },
+//         item {
+//             _id
+//             title
+//             description
+//             status
+//             address
+//             quantity
+//         }
+//     }
+// }`
