@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Free-Maps",
+  "name": "React App to ",
+  "description": "Apps Through which you can look up near by stuff up for donation",
   "icons": [
     {
       "src": "favicon.ico",
