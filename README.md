@@ -98,9 +98,8 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
   ` When I open the app, the Application uses a Node and Express back end and uses GraphQL. For retrieving the data using query method and for adding, deleting and updating data using mutations. `
   ` When I open the root folder, the Application has a folder structure that meets the client side and server side requirements.`
   ` When I see the backend, the Application is backed by a MongoDB database with a GraphQL ODM and protects  sensitive information with environment variables. `
-  `When I tries to interact with the app, the Application includes user authentication`
-  
-  `When I see the backend code, the Application uses at least one new library, package, or technology not covered in class. `
+  `When I tries to interact with the app, the Application includes user authentication (JWT)`
+  `When I see the frontend code, the Application uses Application uses React for the front end.`
 
 
 ## ✏️License
