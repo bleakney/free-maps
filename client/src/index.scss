@@ -230,14 +230,13 @@ span.search-text {
   padding-left: 3%;
 }
 
-label#zip-code {
-  color: rgb(214, 194, 194);
-  padding-left: 0.75rem;
-}
-
 button#search-glass {
   border: none;
   color: $blue-dark;
+}
+
+button#search-glass:hover {
+  color: rgb(194, 228, 255);
 }
 
 svg.svg-inline--fa.fa-search.fa-w-16.fa-3x {

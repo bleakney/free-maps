@@ -10,8 +10,7 @@ function Search() {
       <h1>Free Maps</h1>
       <div className="box">
         <button id="search-glass"><FontAwesomeIcon icon={faSearch} size="3x"/></button>
-        <label id="zip-code" for="city">Enter your zipcode or city</label>
-        <input type="text" name="city"></input>
+        <input type="text" name="zip-code" placeholder="Enter your zipcode or city"></input>
       </div>
       <h2>Find your next treasure here!</h2>
     </div>
