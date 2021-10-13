@@ -116,10 +116,12 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 ## 👪Contributing
 
 - <a href="https://github.com/fizzaaz">FIZZA ZAIDI</a> 
-- <a href="https://github.com/chasemcquown">Chase McQuown</a>
-- <a href="https://github.com/RiveraDenisse">Denisse Rivera</a> 
+-  <a href="https://github.com/bleakney">BLEAKNEY BISSETT</a> 
+- <a href="https://github.com/darkholyphoenix">JAMES BOWEN</a>
 - <a href="https://github.com/Bullbotbam">Donald Bull</a> 
 - <a href="https://github.com/msvillarreal21">Maria Villarreal</a></h4>
+
+ <h4>🔍 Designed and coded by <a href="https://github.com/fizzaaz">FIZZA ZAIDI</a> | <a href="https://github.com/bleakney">BLEAKNEY BISSETT</a> | <a href="https://github.com/darkholyphoenix">JAMES BOWEN</a> | <a href="https://github.com/mbrianna1170">BRI MILLER</a> | <a href="https://github.com/Mindydiane"> MINDY DIANA</a></h4>
 
 
 ## 🔍Issues
