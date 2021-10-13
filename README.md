@@ -48,13 +48,10 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
   To install this code, download the zip file, or use GitHub's guidelines to clone the repository. Also, you need to install [Node.js](https://nodejs.org/en/) and a text editor, I would recommend Visual Studio Code. . Once you have Node.js installed, then install Node Package Manager(npm) and a few dependencies such as Express, React , Mongoose etc.
 
-  `npm init`
-
- `npm i express`
-
+`npm init` 
+`npm i express`
 `npm i mongoose`
 `npm i apollo-server-express`
-
 `npm i graphql`
 `npm i bcrypt`
 `npm i jsonwebtoken`
