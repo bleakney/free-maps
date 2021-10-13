@@ -29,7 +29,7 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
 ✋ [Deployed Application URL](#)
 
-![Screen Shot](./client/public/aseets/screenshot.JPG)
+![Screen Shot](/client/public/assets/screenshot.JPG)
 
 
 
