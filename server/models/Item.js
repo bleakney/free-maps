@@ -32,7 +32,7 @@ const itemSchema = new Schema(
       type: Number,
       required: true,
     },
-    postedBy: {
+    username: {
       type: String,
       required: true,
     },

@@ -71,8 +71,9 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 ## 💻Usage
   
   Run the following command at the root of your project:
+  
+  `npm start`
 
-   `npm start`
 
 ## ✋User Story
 
