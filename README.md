@@ -87,12 +87,11 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
 ## ✋User Story
 
- `AS A User`
+   `AS A User`
 
-`I can look for Items available for sale near me`
+   `I can look for Items available for sale near me `
 
-`SO THAT I can give back to those in need `
-
+   `SO THAT I can go and Pick it up`
 
 ## ✋Acceptance Criteria
 
