@@ -22,6 +22,9 @@ const typeDefs = gql`
     createdAt: String
     status: String
     address: String
+    city: String
+    state: String
+    zipcode: String
     quantity: String
     username: String
     coordinates: [Coordinates]
@@ -45,7 +48,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addItem(title: String!, description: String!, status: String!, address: String!, quantity: String!): Item 
+    addItem(title: String!, description: String!, status: String!, address: String!, city: String!, state: String!, zipcode: String!, quantity: String!,): Item 
     saveItems(
       title: String!
       description: String!
