@@ -22,6 +22,11 @@ body {
   background-color: $blue-light;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .map-container {
     background-color: $blue-light;
 }
@@ -78,6 +83,10 @@ nav {
 
     .nav-link {
       margin-left: 1rem;
+    }
+
+    .logout-btn {
+        margin-right: 1rem;
     }
 
     .nav-signup {
