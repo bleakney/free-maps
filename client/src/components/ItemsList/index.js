@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ItemsList({ items }) {
   if (!items.length) {
     return <div>Nothing up for grabs in your area</div>;
   }
+  // create useState function linked to addItem to automatically refresh list when updated
+//   const [listState, setListState] = useState([]);
 
   return (
     <div className="itemListContainer">
