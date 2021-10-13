@@ -8,8 +8,8 @@ const LoginForm = () => {
   const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state when user fills out form
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
     setFormState({
       ...formState,
       [name]: value,
@@ -17,16 +17,16 @@ const LoginForm = () => {
   };
 
   // submit form handler
-  const loginFormHandler = async (e) => {
-    e.preventDefault();
+  const loginFormHandler = async (event) => {
+    event.preventDefault();
 
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: {...formState},
       });
       Auth.login(data.login.token);
-    } catch (error) {
-      console.error(error);
+    } catch (e) {
+      console.log(e);
     }
 
     setFormState({
@@ -49,7 +49,7 @@ const LoginForm = () => {
           value={formState.email}
           onChange={handleInputChange}
         />
-        <label>username</label>
+        <label>email</label>
         </div>
         <div className="input-container">
         <input
