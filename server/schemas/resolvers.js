@@ -19,6 +19,7 @@ const resolvers = {
             .populate("savedItems")
             .populate("postedItems");
         },
+
         items: async () => {
             return Item.find();
         }
@@ -31,6 +32,13 @@ const resolvers = {
         //         return itemData
         //     }
         // },
+        items: async (parent, { title }) => {
+            const params = title ? { title } : {};
+            return Item.find(params).sort({ createdAt: -1 })
+        },
+        item: async (parent, { _id }) => {
+            return Item.findOne({ _id });
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {
