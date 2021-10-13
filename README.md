@@ -99,7 +99,7 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
   ` When I open the root folder, the Application has a folder structure that meets the client side and server side requirements.`
 
-  ` When I see the backend, the Application is backend by a MongoDB database with a GraphQL ODM and protects  sensitive information with environment variables. `
+  ` When I see the backend, the Application is backend by a MongoDB database with a Mongoose ODM and protects  sensitive information with environment variables. `
 
   `When I tries to interact with the app, the Application includes user authentication (JWT)`
 
