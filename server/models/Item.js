@@ -12,9 +12,6 @@ const itemSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -32,7 +29,7 @@ const itemSchema = new Schema(
       type: Number,
       required: true,
     },
-    postedBy: {
+    username: {
       type: String,
       required: true,
     },

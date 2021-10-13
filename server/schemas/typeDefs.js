@@ -18,12 +18,11 @@ const typeDefs = gql`
     _id: ID
     title: String
     description: String
-    image: String
     createdAt: String
     status: String
     address: String
     quantity: String
-    postedBy: String
+    username: String
     coordinates: [Coordinates]
   }
   type Coordinates {
@@ -46,6 +45,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addItem(title: String!, description: String!, status: String!, address: String!, quantity: String!): Item 
     saveItems(
       title: String!
       description: String!
@@ -53,7 +53,9 @@ const typeDefs = gql`
       status: String!
       quantity: String
     ): User
+    deleteItem(title: String!, description: String!, status: String!, address: String!, quantity: String!, username: String!): Item
     searchItems(title: String!): User
+    updateItem(title: String, description: String, status: String: address: String, quantity: String): Item
   }
 `;
 // export the typeDefs
