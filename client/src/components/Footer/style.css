@@ -11,7 +11,7 @@
     align-items: baseline;
   }
 
-button {
+.donate-button {
     background-color: rgba(166, 216, 254);
     border: none;
     border-radius: 12px;
@@ -21,7 +21,7 @@ button {
     font-weight: 600;
 }
 
-button:hover {
+.donate-button:hover {
     background-color: rgb(242, 246, 248, 0.76);
 }
 

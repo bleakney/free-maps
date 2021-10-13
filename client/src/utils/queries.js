@@ -1,4 +1,4 @@
-import { gql } from 'graphql-tag';
+import { gql } from "graphql-tag";
 
 export const QUERY_ITEMS = gql`
   query items($username: String) {
@@ -24,7 +24,7 @@ export const QUERY_ITEM = gql`
       quantity
     }
   }
-`
+`;
 
 export const QUERY_USER = gql` 
   query user($username: String!) {
@@ -46,4 +46,4 @@ export const QUERY_USER = gql`
       }
     }
   }
-`
+`;

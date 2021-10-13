@@ -1,5 +1,6 @@
 // import dependencies
 import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   ApolloProvider,
   ApolloClient,
@@ -10,21 +11,13 @@ import { setContext } from "@apollo/client/link/context";
 // stylesheet and fonts
 import "./index.scss";
 import WebFont from "webfontloader";
-
-// import components
-
-//footer 
-import Footer from './components/Footer';
-import '../src/components/Footer/style.css'
-
-//search
-import Search from './components/Search';
-
-import Map from "./components/Map";
-import Header from "./components/Header";
-// pages
+// Import Pages
+import Home from "./pages/Home";
+import MapView from './pages/MapView';
 import NoMatch from "./pages/NoMatch";
-
+// import header and footer
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // set up server with @apollo/client
 const httpLink = createHttpLink({
@@ -47,8 +40,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  
-  // import google fonts
+  // implement google fonts
   useEffect(() => {
     WebFont.load({
       google: {
@@ -59,14 +51,20 @@ function App() {
       },
     });
   });
+
   return (
     <ApolloProvider client={client}>
-    <div className="app-container">
-      <Header className="header" />
-      <Search />
-      <Map />
-      <Footer/>
-    </div>
+      <Router>
+        <div className="app-container">
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path='/Map' component={MapView} />
+              <Route exact path="/404" component={NoMatch} />
+            </Switch>
+            <Footer />
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }

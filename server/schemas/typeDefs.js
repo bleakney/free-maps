@@ -1,5 +1,9 @@
 const { gql } = require("apollo-server-express");
 
+// broken queries, pls resolve before adding back into typeDefs
+// item(User):item
+//     location(user:[location]!): Location 
+
 const typeDefs = gql`
   type User {
     _id: ID
@@ -35,8 +39,6 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    items(User):item
-    location(user:[location]!): Location 
   }
   
   type Mutation {
