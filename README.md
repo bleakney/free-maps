@@ -122,7 +122,6 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 - <a href="https://github.com/Mindydiane"> MINDY DIANA</a></h4>
 
 
-
 ## 🔍Issues
 
   None at this time
