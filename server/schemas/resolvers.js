@@ -79,6 +79,32 @@ const resolvers = {
             ).populate("savedItems")
             return updatedUser;       }
         throw new AuthenticationError('You need to be logged in!')
-    }}
+    }},
+
+    // updateItems: async (parent, { input }, context) => {
+    //     if (context.user) {
+    //         const updatedUser - await Item.findOneAndUpdate(
+    //             {_id: context.item._id},
+    //             { $push: {postedItems: item._id}},
+    //             { new: true} 
+    //         );
+            
+    //         return item;
+    //     }
+    // },
+
+    // deleteItems: async (parent,{ input }, context) => {
+    //     if (context.user) {
+    //         const updatedUser = await Item.findOneAndDelete(
+    //             {_id: context.item._id},
+    //             { $pull: {postedItems: item._id}},
+    //             {new: true}
+
+    //         );
+
+    //         return item;
+    //     }
+    // },
+    
 }
 module.exports = resolvers;
