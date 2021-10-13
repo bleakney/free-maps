@@ -122,10 +122,7 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
   None at this time
 
-
 ## ✏️Testing
-
-  [![](https://i9.ytimg.com)](https://youtu.be/)
 
 This app did not undergo any formal testing
 
