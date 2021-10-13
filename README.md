@@ -50,19 +50,17 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
   `npm init`
 
-  `npm install mysql2`
+ `npm i express`
 
-  `npm install sequelize`
+`npm i mongoose`
+`npm i apollo-server-express`
+npm i graphql
+npm i bcrypt
+npm i jsonwebtoken
+npm i react
+npm i react-router-dom
+npm i web-vitals
 
-  `npm install dotenv`
-
-  `npm install express`
-
-  `npm install handlebars`
-
-  `npm install express-session`
-
-  `npm install connect-session-sequelize `
 
 
 ## 💻Usage
