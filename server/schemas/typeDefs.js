@@ -1,7 +1,6 @@
 const { gql } = require("apollo-server-express");
 
-// broken queries, pls resolve before adding back into typeDefs
-// item(User):item
+// broken query, pls resolve before adding back into typeDefs
 //     location(user:[location]!): Location 
 
 const typeDefs = gql`
@@ -39,6 +38,8 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
+    items(title: String): [Item]
+    item(_id: ID!): Item
   }
   
   type Mutation {
@@ -52,9 +53,8 @@ const typeDefs = gql`
       status: String!
       quantity: String
     ): User
-    deleteItem(title: String!, description: String!, status: String!, address: String!, quantity: String!, username: String!): Item
-    searchItems(title: String!): User
-    updateItem(title: String, description: String, status: String: address: String, quantity: String): Item
+    deleteItem(_id: ID!): Item
+    
   }
 `;
 // export the typeDefs

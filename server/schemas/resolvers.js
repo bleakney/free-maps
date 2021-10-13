@@ -19,16 +19,13 @@ const resolvers = {
             .populate("savedItems")
             .populate("postedItems");
         },
-
-        // item: async (parent, { _id }) => {
-        //     return Item.findOne({ _id });
-        // },
-        // item: async (parent, args, context) => {
-        //     if (context.item) {
-        //         const itemData = await Item.findOne({_id: context.user.title})
-        //         return itemData
-        //     }
-        // },
+        items: async (parent, { title }) => {
+            const params = title ? { title } : {};
+            return Item.find(params).sort({ createdAt: -1 })
+        },
+        item: async (parent, { _id }) => {
+            return Item.findOne({ _id });
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {
