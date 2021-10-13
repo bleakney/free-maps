@@ -46,7 +46,7 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
 ## 💾Installation
 
-  To install this code, download the zip file, or use GitHub's guidelines to clone the repository. Also, you need to install [Node.js](https://nodejs.org/en/) and a text editor, I would recommend Visual Studio Code. . Once you have Node.js installed, then install Node Package Manager(npm) and a few dependencies such as Express, Handlebars and Sequelize. 
+  To install this code, download the zip file, or use GitHub's guidelines to clone the repository. Also, you need to install [Node.js](https://nodejs.org/en/) and a text editor, I would recommend Visual Studio Code. . Once you have Node.js installed, then install Node Package Manager(npm) and a few dependencies such as Express, React , Mongoose etc.
 
   `npm init`
 
