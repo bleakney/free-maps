@@ -78,7 +78,7 @@ const resolvers = {
         throw new AuthenticationError('You need to be logged in!')
     }},
 
-    // updateItems: async (parent, { input }, context) => {
+    // updateItem: async (parent, { input }, context) => {
     //     if (context.user) {
     //         const updatedUser - await Item.findOneAndUpdate(
     //             {_id: context.item._id},
@@ -90,7 +90,7 @@ const resolvers = {
     //     }
     // },
 
-    // deleteItems: async (parent,{ input }, context) => {
+    // deleteItem: async (parent,{ input }, context) => {
     //     if (context.user) {
     //         const updatedUser = await Item.findOneAndDelete(
     //             {_id: context.item._id},

@@ -46,7 +46,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addItem(title: String!, description: String!, status: String!, address: String!, quantity: String!): Item 
-    saveItems(
+    saveItem(
       title: String!
       description: String!
       image: String!
@@ -54,7 +54,7 @@ const typeDefs = gql`
       quantity: String
     ): User
     deleteItem(_id: ID!): Item
-    
+    updateItem(_id: ID!): Item
   }
 `;
 // export the typeDefs
