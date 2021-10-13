@@ -1,13 +1,12 @@
 //define gloabl constants
-const APP_PREFIX = 'Budget-';     
+const APP_PREFIX = 'FreeMaps-';     
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 const FILES_TO_CACHE = [
-    "/",
+    "./",
     'index.html',
-    'src/index.js',
-    'css/styles.css',
+    '../src/index.js',
     "icons/icon-192x192.png", 
     "icons/icon-72x72.png",
     "icons/icon-96x96.png",
