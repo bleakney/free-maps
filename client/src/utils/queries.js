@@ -1,16 +1,22 @@
 import { gql } from "graphql-tag";
 
 export const QUERY_ITEMS = gql`
-  query items($username: String) {
-    items(username: $username) {
-      _id
-      title
-      description
-      image
-      status
-      quantity
+query items {
+  items {
+    _id
+    title
+    description
+    createdAt
+    status
+    address
+    quantity
+    username
+    coordinates {
+      longitude
+      latitude
     }
   }
+}
 `;
 
 export const QUERY_ITEM = gql`

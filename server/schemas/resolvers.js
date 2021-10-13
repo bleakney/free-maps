@@ -19,7 +19,9 @@ const resolvers = {
             .populate("savedItems")
             .populate("postedItems");
         },
-
+        items: async () => {
+            return Item.find();
+        }
         // item: async (parent, { _id }) => {
         //     return Item.findOne({ _id });
         // },
