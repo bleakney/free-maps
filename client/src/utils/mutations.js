@@ -23,3 +23,21 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
     }
 }
 `;
+
+export const ADD_ITEM = gql `
+mutation addItem($title: String!, $description: String!, $status: String!, $address: String!, $quantity: String!) {
+    addItem(title: $title, description: $description, status: $status, address: $address, quantity: $quantity) {
+      title
+      description
+      status
+      address
+      quantity
+      username
+      createdAt
+      coordinates {
+        longitude
+        latitude
+      }
+    }
+  }
+`
