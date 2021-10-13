@@ -1,4 +1,4 @@
-const createCoordinates = (address, city, state, zipcode) => {
+export const createCoordinates = (address, city, state, zipcode) => {
 
     const geocodingToken = "l7WaL1SVv79paMDRxtv3gPvhcNkqI6Q1";
     // convert address input to api format
