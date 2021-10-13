@@ -147,4 +147,4 @@ This app did not undergo any formal testing
   👋[chasemcquown](https://github.com/chasemcquown/)<br>
   👋[RiveraDenisse](https://github.com/RiveraDenisse/)
 
-
+ <a href="https://github.com/fizzaaz">FIZZA ZAIDI</a> | <a href="https://github.com/bleakney">BLEAKNEY BISSETT</a> | <a href="https://github.com/darkholyphoenix">JAMES BOWEN</a> | <a href="https://github.com/mbrianna1170">BRI MILLER</a> | <a href="https://github.com/Mindydiane"> MINDY DIANA</a>
