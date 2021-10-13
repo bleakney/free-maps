@@ -172,7 +172,12 @@ form {
   color: $redgray-dark !important;
 }
 
-/*** SEARCH PAGE ***/
+.state-zip-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
 
 .search-page {
   height: 100vh;
