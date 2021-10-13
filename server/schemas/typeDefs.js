@@ -38,8 +38,11 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
+    items: [Item]
+
     items(title: String): [Item]
     item(_id: ID!): Item
+
   }
   
   type Mutation {
@@ -54,7 +57,6 @@ const typeDefs = gql`
       quantity: String
     ): User
     deleteItem(_id: ID!): Item
-    
   }
 `;
 // export the typeDefs
