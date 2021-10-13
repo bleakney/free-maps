@@ -53,7 +53,9 @@ const typeDefs = gql`
       status: String!
       quantity: String
     ): User
+    deleteItem(title: String!, description: String!, status: String!, address: String!, quantity: String!, username: String!): Item
     searchItems(title: String!): User
+    updateItem(title: String, description: String, status: String: address: String, quantity: String): Item
   }
 `;
 // export the typeDefs
