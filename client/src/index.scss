@@ -230,6 +230,19 @@ span.search-text {
   padding-left: 3%;
 }
 
+button#search-glass {
+  border: none;
+  color: $blue-dark;
+}
+
+button#search-glass:hover {
+  color: rgb(194, 228, 255);
+}
+
+svg.svg-inline--fa.fa-search.fa-w-16.fa-3x {
+  background-color: $redgray-dark;
+}
+
 /* FOOTER */
 
 button#donate-button {
