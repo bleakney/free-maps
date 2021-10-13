@@ -67,42 +67,44 @@ const resolvers = {
             }
         },
     
-    saveItem: async (parent, { input }, context) => {
-        if (context.user) {
-            const updatedUser = await User.findOneAndUpdate(
-                { _id: context.user._id },
-                { $addToSet: {savedItems: input} },
-                { new: true } 
-            ).populate("savedItems")
-            return updatedUser;       }
-        throw new AuthenticationError('You need to be logged in!')
+    // saveItem: async (parent, { input }, context) => {
+    //     if (context.user) {
+    //         const updatedUser = await User.findOneAndUpdate(
+    //             { _id: context.user._id },
+    //             { $addToSet: {savedItems: input} },
+    //             { new: true } 
+    //         ).populate("savedItems")
+    //         return updatedUser;       }
+    //     throw new AuthenticationError('You need to be logged in!')
+    // },
     },
-},
 
-    updateItem: async (parent, { input }, context) => {
-        if (context.user) {
-            const updatedItem = await Item.findOneAndUpdate(
-                {_id: context.item._id},
-                { $push: {postedItems: item._id}},
-                { new: true} 
-            );
+    // updateItem: async (parent, { input }, context) => {
+    //     if (context.user) {
+    //         const updatedItem = await Item.findOneAndUpdate(
+    //             {_id: context.item._id},
+    //             { $push: {postedItems: item._id}},
+    //             { new: true} 
+    //         );
             
-            return item;
-        }
-    },
+    //         return updatedItem;
+    //     }
+    // },
 
-    deleteItem: async (parent,{ input }, context) => {
-        if (context.user) {
-            const updatedUser = await Item.findOneAndDelete(
-                {_id: context.item._id},
-                { $pull: {postedItems: item._id}},
-                {new: true}
+    // deleteItem: async (parent,{ itemId }, context) => {
+    //     console.log(context+"context");
+    //     console.log(input);
+    //     if (context.user) {
+    //         const updatedUser = await User.findOneAndUpdate(
+    //             {_id: context.user._id},
+    //             { $pull: {postedItems: itemId}},
+    //             {new: true}
 
-            );
+    //         ).populate("postedItems");
 
-            return item;
-        }
-    },
+    //         return updatedUser;
+    //     }
+    // },
     
 }
 module.exports = resolvers;

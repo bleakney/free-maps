@@ -2,6 +2,16 @@ const { gql } = require("apollo-server-express");
 
 // broken query, pls resolve before adding back into typeDefs
 //     location(user:[location]!): Location 
+// mutations
+// saveItems(
+//   title: String!
+//   description: String!
+//   image: String!
+//   status: String!
+//   quantity: String
+// ): User
+// updateItem(_id: ID!): Item
+// deleteItems(itemId: ID!): User
 
 const typeDefs = gql`
   type User {
@@ -46,16 +56,10 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addItem(title: String!, description: String!, status: String!, address: String!, quantity: String!): Item 
-    saveItem(
-      title: String!
-      description: String!
-      image: String!
-      status: String!
-      quantity: String
-    ): User
-    deleteItem(_id: ID!): Item
-    updateItem(_id: ID!): Item
+    
+     
   }
 `;
 // export the typeDefs
 module.exports = typeDefs;
+
