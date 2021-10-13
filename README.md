@@ -54,7 +54,8 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
 `npm i mongoose`
 `npm i apollo-server-express`
-npm i graphql
+
+`npm i graphql`
 npm i bcrypt
 npm i jsonwebtoken
 npm i react
