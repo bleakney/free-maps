@@ -18,6 +18,13 @@ const resolvers = {
             .select("-__v -password")
             .populate("savedItems")
             .populate("postedItems");
+        },
+        items: async (parent, { title }) => {
+            const params = title ? { title } : {};
+            return Item.find(params).sort({ createdAt: -1 })
+        },
+        item: async (parent, { _id }) => {
+            return Item.findOne({ _id });
         }
         // item: async (parent, args, context) => {
         //     if (context.item) {
