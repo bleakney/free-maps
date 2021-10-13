@@ -71,17 +71,7 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 ## 💻Usage
   
   Run the following command at the root of your project:
-
-  `mysql -u root -p`
-
-  Enter Password when promted
-
-  `source db/schema.sql`
-
-  `quit`
-
-  `npm run seed`
-    
+  
   `npm start`
 
 
