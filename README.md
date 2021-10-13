@@ -89,7 +89,7 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
  `AS A User`
 
-`I can look for Items available for sale`
+`I can look for Items available for sale near me`
 
 `SO THAT I can give back to those in need `
 
