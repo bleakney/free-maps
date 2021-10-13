@@ -129,9 +129,9 @@ This app did not undergo any formal testing
 
 ## 🔍Links
 
-- [The App ~ Video Demo](https://youtu.be/)
+- [The App ~ Video Demo]()
 
-- [This app is deployed on Heroku (click here to see app)](https://dashboard.heroku.com/apps)
+- [This app is deployed on Heroku (click here to see app)]()
 
 
 ## ❓Questions
