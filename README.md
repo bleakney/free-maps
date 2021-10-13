@@ -143,7 +143,7 @@ This app did not undergo any formal testing
   If you have any queries feel free to contact us through our Github profile at  
   👋[fizzaaz](https://github.com/fizzaaz/) <br>
   👋[Mindydiane](https://github.com/Mindydiane/)<br>
-  👋[Bullbotbam](https://github.com/Bullbotbam/)<br>
+  👋[Bleakney](https://github.com/bleakney/)<br>
   👋[chasemcquown](https://github.com/chasemcquown/)<br>
   👋[RiveraDenisse](https://github.com/RiveraDenisse/)
 
