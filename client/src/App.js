@@ -61,8 +61,8 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path='/Map' component={MapView} />
               <Route exact path="/404" component={NoMatch} />
-              <Footer />
             </Switch>
+            <Footer />
         </div>
       </Router>
     </ApolloProvider>
