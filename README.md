@@ -87,7 +87,11 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
 ## ✋User Story
 
-  `As a User I can write a blog about my favorite interests as well as interact with other blog posts. Change a boring Friday night-in watching the same series you've seen multiple times, and include High 5 into the night's events.`
+ `AS A User`
+
+`I WANT to donate to charities of my choosing`
+
+`SO THAT I can give back to those in need `
 
 
 ## ✋Acceptance Criteria
