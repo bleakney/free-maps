@@ -12,9 +12,6 @@ const itemSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-    },
     createdAt: {
       type: Date,
       default: Date.now,
