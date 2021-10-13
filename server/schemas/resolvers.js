@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Items } = require('../models');
+const { User, Item } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -19,26 +19,15 @@ const resolvers = {
             .populate("savedItems")
             .populate("postedItems");
         },
+
         items: async (parent, { title }) => {
             const params = title ? { title } : {};
             return Item.find(params).sort({ createdAt: -1 })
         },
         item: async (parent, { _id }) => {
             return Item.findOne({ _id });
-        }
-        // item: async (parent, args, context) => {
-        //     if (context.item) {
-        //         const itemData = await Item.findOne({_id: context.user.title})
-        //         return itemData
-        //     }
-        // },
-        // location: async (parent, args, context) => {
-        //     if (context.location) {
-        //         const locationData = await User.findOne({location: context.user.location})
-        //         return locationData
-        //     }
-        // }
-    },
+        },
+
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
@@ -63,7 +52,21 @@ const resolvers = {
 
             return { token, user };
         },
-    
+        addItem: async (parent, args, context) => {
+            if (context.user) {
+                const item = await Item.create({
+                    ...args, username: context.user.username });
+                    console.log(item);
+                    console.log(args);
+                 await User.findByIdAndUpdate(
+                    { _id: context.user._id},
+                    { $push: { postedItems: item._id }},
+                    { new: true }
+                );
+
+                return item;
+            }
+        },
     
     saveItems: async (parent, { input }, context) => {
         if (context.user) {
@@ -74,6 +77,32 @@ const resolvers = {
             ).populate("savedItems")
             return updatedUser;       }
         throw new AuthenticationError('You need to be logged in!')
-    }}
+    }},
+
+    // updateItems: async (parent, { input }, context) => {
+    //     if (context.user) {
+    //         const updatedUser - await Item.findOneAndUpdate(
+    //             {_id: context.item._id},
+    //             { $push: {postedItems: item._id}},
+    //             { new: true} 
+    //         );
+            
+    //         return item;
+    //     }
+    // },
+
+    // deleteItems: async (parent,{ input }, context) => {
+    //     if (context.user) {
+    //         const updatedUser = await Item.findOneAndDelete(
+    //             {_id: context.item._id},
+    //             { $pull: {postedItems: item._id}},
+    //             {new: true}
+
+    //         );
+
+    //         return item;
+    //     }
+    // },
+    
 }
 module.exports = resolvers;

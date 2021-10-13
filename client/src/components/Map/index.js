@@ -5,7 +5,7 @@ import MapPins from '../MapPins';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ModalUnstyled from "@mui/core/ModalUnstyled/";
 import { styled, Box } from "@mui/system";
-import AddPinForm from '../AddPinForm';
+import AddPinForm from '../AddPinModal';
 
 const testItems = [
   {"item": "couch","latitude":30.230015,"longitude":-97.824436},
