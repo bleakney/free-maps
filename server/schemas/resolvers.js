@@ -67,7 +67,7 @@ const resolvers = {
             }
         },
     
-    saveItems: async (parent, { input }, context) => {
+    saveItem: async (parent, { input }, context) => {
         if (context.user) {
             const updatedUser = await User.findOneAndUpdate(
                 { _id: context.user._id },
@@ -76,32 +76,33 @@ const resolvers = {
             ).populate("savedItems")
             return updatedUser;       }
         throw new AuthenticationError('You need to be logged in!')
-    }},
+    },
+},
 
-    // updateItem: async (parent, { input }, context) => {
-    //     if (context.user) {
-    //         const updatedUser - await Item.findOneAndUpdate(
-    //             {_id: context.item._id},
-    //             { $push: {postedItems: item._id}},
-    //             { new: true} 
-    //         );
+    updateItem: async (parent, { input }, context) => {
+        if (context.user) {
+            const updatedItem = await Item.findOneAndUpdate(
+                {_id: context.item._id},
+                { $push: {postedItems: item._id}},
+                { new: true} 
+            );
             
-    //         return item;
-    //     }
-    // },
+            return item;
+        }
+    },
 
-    // deleteItem: async (parent,{ input }, context) => {
-    //     if (context.user) {
-    //         const updatedUser = await Item.findOneAndDelete(
-    //             {_id: context.item._id},
-    //             { $pull: {postedItems: item._id}},
-    //             {new: true}
+    deleteItem: async (parent,{ input }, context) => {
+        if (context.user) {
+            const updatedUser = await Item.findOneAndDelete(
+                {_id: context.item._id},
+                { $pull: {postedItems: item._id}},
+                {new: true}
 
-    //         );
+            );
 
-    //         return item;
-    //     }
-    // },
+            return item;
+        }
+    },
     
 }
 module.exports = resolvers;
