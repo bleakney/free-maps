@@ -100,6 +100,19 @@ const resolvers = {
           return updatedItem;
         }
     },
+    deleteItem: async (parent, args, context) => {
+        console.log(args);
+        await Item.findOneAndDelete(
+            { _id: args._id },
+            { new: true });
+            const updatedUser = await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $pull: { postedItems: {itemId: args._id} } },
+                { new: true }
+            ).populate('postedItems');
+            
+            return updatedUser;
+    }
     }
     // updateItems: async (parent, { input }, context) => {
     //     if (context.user) {

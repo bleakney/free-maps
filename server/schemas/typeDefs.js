@@ -60,6 +60,7 @@ const typeDefs = gql`
       quantity: String
     ): User
     addCoordinates(itemId: ID!, latitude: String!, longitude: String!): Item
+    deleteItem(_id: ID!): Item
     
   }
 `;
