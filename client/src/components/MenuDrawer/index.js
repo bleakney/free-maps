@@ -67,7 +67,7 @@ function MenuDrawer(props) {
             {/* maybe use map function here */}
             <TabPanel value="1">
                 {loading ? (
-                    <div class="view-text">Loading...</div>
+                    <div className="view-text">Loading...</div>
                 ) : (
                     <ItemsList 
                     items={items}
