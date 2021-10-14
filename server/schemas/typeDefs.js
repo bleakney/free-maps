@@ -38,6 +38,7 @@ const typeDefs = gql`
     user: User
   }
 
+
   type Query {
     me: User
     users: [User]
@@ -58,8 +59,11 @@ const typeDefs = gql`
       status: String!
       quantity: String
     ): User
-    deleteItem(_id: ID!): Item
+    addCoordinates(itemId: ID!, latitude: String!, longitude: String!): Item
+    
   }
 `;
 // export the typeDefs
 module.exports = typeDefs;
+
+//deleteItem(_id: ID!): Item

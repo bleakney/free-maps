@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_ITEM } from "../../utils/mutations";
+import { ADD_ITEM, ADD_COORDINATES } from "../../utils/mutations";
 import Auth from "../../utils/auth";
+import createCoordinates from '../../utils/geocoding';
 
 function AddPinForm() {
   const [formState, setFormState] = useState({
@@ -16,6 +17,7 @@ function AddPinForm() {
   });
 
   const [addItem, { error }] = useMutation(ADD_ITEM);
+  const [addCoordinates] = useMutation(ADD_COORDINATES);
 
   // update state when user fills out form
   const handleInputChange = (e) => {
@@ -39,15 +41,28 @@ function AddPinForm() {
     // figure out how to send postedBy
     //
 
+  
     // SOMETHING LIKE THIS:
+    let data;
     try {
-      const { data } = await addItem({
+      data = await addItem({
         variables: { ...formState },
       });
-      Auth.getProfile(data.addItem.token);
+      Auth.getProfile(data.data.addItem.token);
+    } catch (error) {
+      console.error(error);
+    };
+
+    try {
+      const coordinates = await createCoordinates(formState.address, formState.city, formState.state, formState.zipcode);
+      const { data2 } = await addCoordinates({
+        variables: { itemId: data.data.addItem._id, longitude: coordinates[1] + '', latitude: coordinates[0] + '' }
+      })
     } catch (error) {
       console.error(error);
     }
+
+
 
     setFormState({
       title: "",

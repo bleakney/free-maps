@@ -30,8 +30,7 @@ function MenuDrawer(props) {
 
   // query items
   const { loading, data } = useQuery(QUERY_ITEMS);
-  const items = data?.items || []
-  console.log(items);
+  const items = data?.items || [];
 
   return (
     <div className="drawer-container">

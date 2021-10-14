@@ -10,13 +10,13 @@ import RoomIcon from '@mui/icons-material/Room';
 
 function MapPins(props) {
     // const { data, onClick } = props;
-    const { data } = props
-
-    return data.map((item, index) => (
+    const {data, items }  = props
+ 
+    return items.map((item, index) => (
         <Marker 
         key={`marker-${index}`}
-        longitude={item.longitude}
-        latitude={item.latitude}>
+        longitude={parseFloat(item.coordinates[0].longitude)}
+        latitude={parseFloat(item.coordinates[0].latitude)}>
 
             <RoomIcon sx={{color: "#000"}}></RoomIcon>
             {/* <svg

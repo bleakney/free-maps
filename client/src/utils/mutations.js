@@ -27,6 +27,7 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 export const ADD_ITEM = gql `
 mutation addItem($title: String!, $description: String!, $status: String!, $address: String!, $city: String!, $state: String!, $zipcode: String! $quantity: String!) {
     addItem(title: $title, description: $description, status: $status, address: $address, city: $city, state: $state, zipcode: $zipcode, quantity: $quantity) {
+      _id
       title
       description
       status
@@ -43,7 +44,29 @@ mutation addItem($title: String!, $description: String!, $status: String!, $addr
       }
     }
   }
-`
+`;
+
+export const ADD_COORDINATES = gql `
+mutation addCoordinates($itemId: ID!, $latitude: String!, $longitude: String!) {
+    addCoordinates (itemId: $itemId, latitude: $latitude, longitude: $longitude ) {
+      _id
+      title
+      description
+      createdAt
+      status
+      address
+      city
+      state
+      zipcode
+      quantity
+      username
+      coordinates {
+        longitude
+        latitude
+      }
+    }
+  }
+`;
 
 // export const DELETE_ITEM = gql `
 // mutation deleteItem($title: String!, $description: String!, $status: String!, address: String!, quantity: String!, username: String!) {
