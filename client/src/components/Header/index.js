@@ -8,8 +8,14 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuDrawer from "../MenuDrawer";
 import Auth from "../../utils/auth";
+import { useQuery } from '@apollo/client';
+import { QUERY_ITEMS } from '../../utils/queries';
 
 function Header(props) {
+
+  const { data, loading, refetch } = useQuery(QUERY_ITEMS);
+  const items = data?.items || [];
+
   const LoginModal = styled(ModalUnstyled)`
     position: fixed;
     z-index: 1300;
@@ -65,7 +71,15 @@ function Header(props) {
   const handleSignupClose = () => setSignupOpen(false);
   // set drawer visibility state
   const [openDrawer, setDrawerOpen] = useState(false);
-  const handleDrawerOpen = () => setDrawerOpen(true);
+  const handleDrawerOpen = () => {
+    refetch()
+    .then( items => {
+      setItemsState(items);
+    })
+    setDrawerOpen(true);
+  };
+
+  const [itemsState, setItemsState] = useState(items);
 
   function showNavigation() {
     if (Auth.loggedIn()) {
@@ -128,6 +142,8 @@ function Header(props) {
         </div>
       </nav>
       <MenuDrawer
+      items={itemsState.length ? (itemsState) : (items)}
+      loading={loading}
         variant="persistent"
         anchor="left"
         openDrawer={openDrawer}
