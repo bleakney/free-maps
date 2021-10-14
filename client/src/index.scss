@@ -173,10 +173,10 @@ form {
 }
 
 .state-zip-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .search-page {
@@ -333,7 +333,7 @@ a.social-icon {
   margin-top: 1rem;
 }
 
-/*** Menu Drawer ***/
+/*** MENU DRAWER ***/
 #item-title {
   color: $redgray-dark;
   font-weight: 500;
@@ -351,3 +351,11 @@ a.social-icon {
   font-weight: 550 !important;
 }
 
+/*** MEDIA QUERIES FOR MENU DRAWER ***/
+
+@media (max-width: 375px) {
+  .css-sn99m7-MuiDrawer-docked .MuiDrawer-paper {
+    width: 100% !important;
+    height: 50% !important;
+  }
+}
