@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import ReactMapGL from 'react-map-gl'; 
+import ReactMapGL, { Popup } from 'react-map-gl'; 
 import IconButton from '@mui/material/IconButton';
 import MapPins from '../MapPins';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ModalUnstyled from "@mui/core/ModalUnstyled/";
 import { styled, Box } from "@mui/system";
 import AddPinForm from '../AddPinModal';
+import PinInfo from '../PinInfo';
+import { useQuery } from '@apollo/client';
+import { QUERY_ITEMS } from '../../utils/queries';
 
-const testItems = [
-  {"item": "couch","latitude":30.230015,"longitude":-97.824436},
-  {"item": "shoes","latitude":30.273115,"longitude":-97.778055},
-  {"item": "take-a-book-leave-a-book library","latitude":30.266644,"longitude":-97.730224}
-]
 
 function Map() {
+
+  const { data, loading, refetch } = useQuery(QUERY_ITEMS);
+  const items = data?.items || [];
+  
+
+
   // add pin modal 
   const StyledModal = styled(ModalUnstyled)`
     position: fixed;
@@ -48,14 +52,27 @@ function Map() {
   // set add pin Modal visibility state
   const [openAddPinModal, setAddPinModalOpen] = useState(false);
   const handleAddPinModalOpen = () => setAddPinModalOpen(true);
-  const handleAddPinModalClose = () => setAddPinModalOpen(false);
+  const handleAddPinModalClose = () => {
+    refetch()
+    .then(items => {
+      setItemsState(items);
+      console.log(items);
+    });
+    
+    
+    setAddPinModalOpen(false);
+  }
 
   // set up map
   const [viewport, setViewport] = useState({
     latitude: 30.266013,
     longitude: -97.746211,
-    zoom: 12
+    zoom: 10
   });
+
+  const [popupInfo, setPopupInfo] = useState(null);
+
+  const [itemsState, setItemsState] = useState(items);
 
   return (
       <div>
@@ -72,7 +89,21 @@ function Map() {
       <AddCircleIcon sx={{fontSize: '4vw', color: 'rgb(191, 171, 171)'}}/>
       </IconButton>
       </div>
-      <MapPins data={testItems} />
+      <MapPins items={itemsState.length ? (itemsState) : (items)} onClick={setPopupInfo} />
+
+      {popupInfo && (
+          <Popup
+            tipSize={5}
+            anchor="top"
+            longitude={parseFloat(popupInfo.coordinates[0].longitude)}
+            latitude={parseFloat(popupInfo.coordinates[0].latitude)}
+            closeOnClick={false}
+            onClose={setPopupInfo}
+          >
+            <PinInfo item={popupInfo} />
+          </Popup>
+        )}
+
       </ReactMapGL>
 
       <StyledModal
@@ -81,7 +112,8 @@ function Map() {
       BackdropComponent={Backdrop}
       >
         <Box sx={style}>
-          <AddPinForm />
+          <AddPinForm
+           />
         </Box>
       </StyledModal>
     </div>

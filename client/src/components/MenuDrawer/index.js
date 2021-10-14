@@ -8,8 +8,8 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import { useQuery } from "@apollo/client";
-import { QUERY_ITEMS } from "../../utils/queries";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_ITEMS } from "../../utils/queries";
 import ItemsList from '../ItemsList';
 
 const drawerWidth = "30vw";
@@ -22,16 +22,13 @@ const tabStyles = {
 
 function MenuDrawer(props) {
   // import useState function to toggle drawer visibility
-  const { openDrawer, setDrawerOpen } = props;
+  const { openDrawer, setDrawerOpen, items, loading } = props;
   const handleDrawerClose = () => setDrawerOpen(false);
   // toggle Tabs
   const [tabValue, setTabValue] = useState("1");
   const handleChange = (event, newValue) => setTabValue(newValue);
 
   // query items
-  const { loading, data } = useQuery(QUERY_ITEMS);
-  const items = data?.items || []
-  console.log(items);
 
   return (
     <div className="drawer-container">
@@ -59,25 +56,25 @@ function MenuDrawer(props) {
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <div className="tablist-container">
                 <TabList onChange={handleChange} aria-label="Pin descriptions">
-                  <Tab label="View All" value="1" sx={tabStyles} />
-                  <Tab label="Your Pins" value="2" sx={tabStyles} />
-                  <Tab label="Saved Pins" value="3" sx={tabStyles} />
+                  <Tab id="tab-list" label="View All" value="1" sx={tabStyles} />
+                  <Tab id="tab-list" label="Your Pins" value="2" sx={tabStyles} />
+                  <Tab id="tab-list" label="Saved Pins" value="3" sx={tabStyles} />
                 </TabList>
               </div>
             </Box>
             {/* maybe use map function here */}
             <TabPanel value="1">
                 {loading ? (
-                    <div>Loading...</div>
+                    <div className="view-text">Loading...</div>
                 ) : (
                     <ItemsList 
                     items={items}
                     />
                 )}
             </TabPanel>
-            <TabPanel value="2">Item Two</TabPanel>
-            <TabPanel value="3">Item Three</TabPanel>
-          </TabContext>
+            <TabPanel id="item-title" value="2">directions for future development</TabPanel>
+            <TabPanel id="item-title" value="3">directions for future development</TabPanel>
+          </TabContext >
         </Box>
         <Divider />
       </Drawer>

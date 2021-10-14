@@ -50,11 +50,11 @@ const typeDefs = gql`
     user: User
   }
 
+
   type Query {
     me: User
     users: [User]
-
-    items(title: String): [Item]
+    items: [Item]
     item(_id: ID!): Item
 
   
@@ -65,9 +65,19 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addItem(title: String!, description: String!, status: String!, address: String!, city: String!, state: String!, zipcode: String!, quantity: String!,): Item 
-    updateItems(title: String, description: String, status: String, address: String, city: String, state: String, zipcode: String, quantity: String): Item
-    saveItems(input: ItemInput!): User
+    saveItems(
+      title: String!
+      description: String!
+      image: String!
+      status: String!
+      quantity: String
+    ): User
+    addCoordinates(itemId: ID!, latitude: String!, longitude: String!): Item
+    deleteItem(_id: ID!): Item
+    
   }
 `;
 // export the typeDefs
 module.exports = typeDefs;
+
+//deleteItem(_id: ID!): Item

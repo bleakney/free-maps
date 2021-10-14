@@ -19,10 +19,9 @@ const resolvers = {
             .populate("savedItems")
             .populate("postedItems");
         },
-
-        // items: async () => {
-        //     return Item.find();
-        // },
+        items: async () => {
+            return Item.find();
+        }
         // item: async (parent, { _id }) => {
         //     return Item.findOne({ _id });
         // },
@@ -32,13 +31,13 @@ const resolvers = {
         //         return itemData
         //     }
         // },
-        items: async (parent, { title }) => {
-            const params = title ? { title } : {};
-            return Item.find(params).sort({ createdAt: -1 })
-        },
-        item: async (parent, { _id }) => {
-            return Item.findOne({ _id });
-        }
+        // items: async (parent, { title }) => {
+        //     const params = title ? { title } : {};
+        //     return Item.find(params).sort({ createdAt: -1 })
+        // },
+        // item: async (parent, { _id }) => {
+        //     return Item.findOne({ _id });
+        // }
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -89,28 +88,33 @@ const resolvers = {
             ).populate("savedItems")
             return updatedUser;       }
         throw new AuthenticationError('You need to be logged in!')
-    }},
-
-    updateItems: async (parent, {title, description, status, address, city, state, zipcode, quantity}, context) => {
+    },
+    addCoordinates: async (parent, { itemId, latitude, longitude }, context) => {
         if (context.user) {
-            const updatedItem = await Item.findOneAndUpdate(
-                {title: title},
-                {description: description},
-                {status: status},
-                {address: address},
-                {city: city},
-                {state: state},
-                {zipcode: zipcode},
-                {quantity: quantity},
-                {new: true}
-
-            ).poplulate("postedItems");
-            
-            return updatedItem;
+          const updatedItem = await Item.findOneAndUpdate(
+            { _id: itemId },
+            { $push: { coordinates: { latitude, longitude } } },
+            { new: true }
+          );
+  
+          return updatedItem;
         }
     },
-
-    // deleteItems: async (parent,{ itemId }, context) => {
+    deleteItem: async (parent, args, context) => {
+        console.log(args);
+        await Item.findOneAndDelete(
+            { _id: args._id },
+            { new: true });
+            const updatedUser = await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $pull: { postedItems: {itemId: args._id} } },
+                { new: true }
+            ).populate('postedItems');
+            
+            return updatedUser;
+    }
+    }
+    // updateItems: async (parent, { input }, context) => {
     //     if (context.user) {
     //         const updatedItem = await Item.findByIdAndDelete(
 
