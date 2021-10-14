@@ -7,15 +7,33 @@ import Auth from '../../utils/auth';
 import { useMutation } from '@apollo/client';
 import { DELETE_ITEM } from '../../utils/mutations';
 
+
 function ItemsList({ items }) {
-    // const { deleteItem, loading } = useMutation(DELETE_ITEM);
+
+ const [deleteItem, { error }] = useMutation(DELETE_ITEM);
+
+  const deleteItemHandler = (itemId) => {
+    try {
+      deleteItem({
+        variables: {_id: itemId},
+      });
+    } catch (e) {
+      console.error(e);
+    }
+    // refetch()
+    // .then(items => {
+    //   setItemsState(items);
+    // })
+
+
+  }
+
+    
   if (!items.length) {
     return <div>Nothing up for grabs in your area</div>;
   }
   const userData = Auth.getProfile();
   const username = userData.data.username;
-
-  
 
 
   // create useState function linked to addItem to automatically refresh list when updated
@@ -34,7 +52,7 @@ function ItemsList({ items }) {
                 <IconButton>
                     <EditIcon sx={{color: "rgb(191, 171, 171)"}} />
                 </IconButton>
-                <IconButton>
+                <IconButton onClick={() => deleteItemHandler(item._id)}>
                     <DeleteIcon sx={{color: "rgb(191, 171, 171)"}} />
                 </IconButton>
                 </div>

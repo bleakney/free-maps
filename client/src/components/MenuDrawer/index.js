@@ -69,6 +69,7 @@ function MenuDrawer(props) {
                 ) : (
                     <ItemsList 
                     items={items}
+                    
                     />
                 )}
             </TabPanel>

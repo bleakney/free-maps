@@ -8,13 +8,16 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuDrawer from "../MenuDrawer";
 import Auth from "../../utils/auth";
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
+import { DELETE_ITEM } from '../../utils/mutations';
 
-function Header(props) {
+function Header() {
 
   const { data, loading, refetch } = useQuery(QUERY_ITEMS);
   const items = data?.items || [];
+
+ 
 
   const LoginModal = styled(ModalUnstyled)`
     position: fixed;
