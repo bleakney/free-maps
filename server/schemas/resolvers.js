@@ -81,8 +81,19 @@ const resolvers = {
             ).populate("savedItems")
             return updatedUser;       }
         throw new AuthenticationError('You need to be logged in!')
-    }},
-
+    },
+    addCoordinates: async (parent, { itemId, latitude, longitude }, context) => {
+        if (context.user) {
+          const updatedItem = await Item.findOneAndUpdate(
+            { _id: itemId },
+            { $push: { coordinates: { latitude, longitude } } },
+            { new: true }
+          );
+  
+          return updatedItem;
+        }
+    },
+    }
     // updateItems: async (parent, { input }, context) => {
     //     if (context.user) {
     //         const updatedUser - await Item.findOneAndUpdate(
