@@ -179,6 +179,20 @@ form {
   width: 100%;
 }
 
+.itemListContainer {
+    h4 {
+        color: $redgray-dark;
+    }
+    p {
+        font-weight: 200;
+        font-size: .85rem;
+    }
+    .itemFooterText {
+        font-style: italic;
+        font-size: .75rem;
+    }
+}
+
 
 
 .pin-info-container {

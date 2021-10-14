@@ -13,7 +13,7 @@ import { QUERY_ITEMS } from '../../utils/queries';
 
 function Map() {
 
-  const { data, loading } = useQuery(QUERY_ITEMS);
+  const { data, loading, refetch } = useQuery(QUERY_ITEMS);
   const items = data?.items || [];
   
 
@@ -52,7 +52,16 @@ function Map() {
   // set add pin Modal visibility state
   const [openAddPinModal, setAddPinModalOpen] = useState(false);
   const handleAddPinModalOpen = () => setAddPinModalOpen(true);
-  const handleAddPinModalClose = () => setAddPinModalOpen(false);
+  const handleAddPinModalClose = () => {
+    refetch()
+    .then(items => {
+      setItemsState(items);
+      console.log(items);
+    });
+    
+    
+    setAddPinModalOpen(false);
+  }
 
   // set up map
   const [viewport, setViewport] = useState({
@@ -62,6 +71,8 @@ function Map() {
   });
 
   const [popupInfo, setPopupInfo] = useState(null);
+
+  const [itemsState, setItemsState] = useState(items);
 
   return (
       <div>
@@ -78,7 +89,7 @@ function Map() {
       <AddCircleIcon sx={{fontSize: '4vw', color: 'rgb(191, 171, 171)'}}/>
       </IconButton>
       </div>
-      <MapPins items={items} onClick={setPopupInfo} />
+      <MapPins items={itemsState.length ? (itemsState) : (items)} onClick={setPopupInfo} />
 
       {popupInfo && (
           <Popup
@@ -101,7 +112,8 @@ function Map() {
       BackdropComponent={Backdrop}
       >
         <Box sx={style}>
-          <AddPinForm />
+          <AddPinForm
+           />
         </Box>
       </StyledModal>
     </div>

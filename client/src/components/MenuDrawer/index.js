@@ -8,8 +8,8 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import { useQuery } from "@apollo/client";
-import { QUERY_ITEMS } from "../../utils/queries";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_ITEMS } from "../../utils/queries";
 import ItemsList from '../ItemsList';
 
 const drawerWidth = "30vw";
@@ -22,15 +22,13 @@ const tabStyles = {
 
 function MenuDrawer(props) {
   // import useState function to toggle drawer visibility
-  const { openDrawer, setDrawerOpen } = props;
+  const { openDrawer, setDrawerOpen, items, loading } = props;
   const handleDrawerClose = () => setDrawerOpen(false);
   // toggle Tabs
   const [tabValue, setTabValue] = useState("1");
   const handleChange = (event, newValue) => setTabValue(newValue);
 
   // query items
-  const { loading, data } = useQuery(QUERY_ITEMS);
-  const items = data?.items || [];
 
   return (
     <div className="drawer-container">
