@@ -1,7 +1,6 @@
 const { gql } = require("apollo-server-express");
 
-// broken queries, pls resolve before adding back into typeDefs
-// item(User):item
+// broken query, pls resolve before adding back into typeDefs
 //     location(user:[location]!): Location 
 
 const typeDefs = gql`
@@ -44,6 +43,9 @@ const typeDefs = gql`
     me: User
     users: [User]
     items: [Item]
+
+    item(_id: ID!): Item
+
   }
   
   type Mutation {
