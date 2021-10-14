@@ -9,6 +9,9 @@ query items {
     createdAt
     status
     address
+    city
+    state
+    zipcode
     quantity
     username
     coordinates {
