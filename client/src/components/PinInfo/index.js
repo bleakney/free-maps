@@ -15,6 +15,7 @@ function PinInfo (props) {
             </div>
             <h6>Located At:</h6>
             <p>{item.address}, {item.zipcode}</p>
+            <p className="pinInfo-postedAt">Posted on {item.createdAt}</p>
 
         </div>
     )
