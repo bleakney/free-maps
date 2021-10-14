@@ -10,6 +10,10 @@ import PinInfo from '../PinInfo';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
 import Auth from '../../utils/auth';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 
 function Map() {
