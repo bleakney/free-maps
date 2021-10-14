@@ -110,18 +110,34 @@ const resolvers = {
     //     }
     // },
 
-    deleteItems: async (parent,{ itemId }, context) => {
-        if (context.user) {
-            const updatedItem = await Item.findByIdAndDelete(
+    // deleteItems: async (parent,{ itemId }, context) => {
+    //     if (context.user) {
+    //         const updatedItem = await Item.findByIdAndDelete(
 
-                {_id: item._id},
+    //             {_id: item._id},
+    //             {new: true}
+
+    //         );
+
+    //         return updatedItem;
+    //     }
+    // },
+    
+    saveItems: async (parent, args, context) => {
+        if (context.user) {
+            const updatedUser = await User.findOneAndUpdate(
+                {_id: context.user._id},
+                { $addToSet: {savedItems: args.input}},
                 {new: true}
 
-            );
+            ).populate('savedItems');
 
-            return updatedItem;
+            return updatedUser;
         }
+
+        throw new AuthenticationError('You need to be logged in');
     },
     
+
 }
 module.exports = resolvers;

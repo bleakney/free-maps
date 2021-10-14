@@ -28,6 +28,18 @@ const typeDefs = gql`
     username: String
     coordinates: [Coordinates]
   }
+
+  input ItemInput {
+    title: String
+    description: String
+    status: String
+    address: String
+    city: String
+    state: String
+    zipcode: String
+    quantity: String
+  }
+
   type Coordinates {
     _id: ID
     longitude: String
@@ -45,20 +57,15 @@ const typeDefs = gql`
     items(title: String): [Item]
     item(_id: ID!): Item
 
+  
+
   }
   
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addItem(title: String!, description: String!, status: String!, address: String!, city: String!, state: String!, zipcode: String!, quantity: String!,): Item 
-    saveItems(
-      title: String!
-      description: String!
-      image: String!
-      status: String!
-      quantity: String
-    ): User
-    deleteItem(_id: ID!): Item
+    saveItems(input: ItemInput!): User
   }
 `;
 // export the typeDefs
