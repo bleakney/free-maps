@@ -191,6 +191,12 @@ form {
         font-style: italic;
         font-size: .75rem;
     }
+.deleteItemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 }
 
 

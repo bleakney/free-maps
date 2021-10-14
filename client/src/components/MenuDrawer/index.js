@@ -72,8 +72,8 @@ function MenuDrawer(props) {
                     />
                 )}
             </TabPanel>
-            <TabPanel id="item-title" value="2">Item Two</TabPanel>
-            <TabPanel id="item-title" value="3">Item Three</TabPanel>
+            <TabPanel id="item-title" value="2">directions for future development</TabPanel>
+            <TabPanel id="item-title" value="3">directions for future development</TabPanel>
           </TabContext >
         </Box>
         <Divider />
