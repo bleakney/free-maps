@@ -17,7 +17,23 @@ function Header() {
   const { data, loading, refetch } = useQuery(QUERY_ITEMS);
   const items = data?.items || [];
 
- 
+  const [deleteItem, { error }] = useMutation(DELETE_ITEM);
+
+  const deleteItemHandler = (itemId) => {
+    try {
+      deleteItem({
+        variables: {_id: itemId},
+      }).then(() => {
+        refetch()
+        .then(items => {
+          setItemsState(items);
+        });
+      });
+    } catch (e) {
+      console.error(e);
+    }
+    
+  }
 
   const LoginModal = styled(ModalUnstyled)`
     position: fixed;
@@ -146,6 +162,7 @@ function Header() {
       </nav>
       <MenuDrawer
       items={itemsState.length ? (itemsState) : (items)}
+      deleteItemHandler={deleteItemHandler}
       loading={loading}
         variant="persistent"
         anchor="left"

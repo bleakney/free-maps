@@ -4,29 +4,17 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import Auth from '../../utils/auth';
-import { useMutation } from '@apollo/client';
-import { DELETE_ITEM } from '../../utils/mutations';
+// import { useMutation } from '@apollo/client';
+// import { DELETE_ITEM } from '../../utils/mutations';
 
 
-function ItemsList({ items }) {
+function ItemsList(props) {
 
- const [deleteItem, { error }] = useMutation(DELETE_ITEM);
+    const {
+        items,
+        deleteItemHandler
+    } = props;
 
-  const deleteItemHandler = (itemId) => {
-    try {
-      deleteItem({
-        variables: {_id: itemId},
-      });
-    } catch (e) {
-      console.error(e);
-    }
-    // refetch()
-    // .then(items => {
-    //   setItemsState(items);
-    // })
-
-
-  }
 
     
   if (!items.length) {

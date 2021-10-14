@@ -22,7 +22,7 @@ const tabStyles = {
 
 function MenuDrawer(props) {
   // import useState function to toggle drawer visibility
-  const { openDrawer, setDrawerOpen, items, loading } = props;
+  const { openDrawer, setDrawerOpen, items, loading, deleteItemHandler } = props;
   const handleDrawerClose = () => setDrawerOpen(false);
   // toggle Tabs
   const [tabValue, setTabValue] = useState("1");
@@ -69,7 +69,7 @@ function MenuDrawer(props) {
                 ) : (
                     <ItemsList 
                     items={items}
-                    
+                    deleteItemHandler={deleteItemHandler}
                     />
                 )}
             </TabPanel>
