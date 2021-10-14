@@ -6,14 +6,23 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ModalUnstyled from "@mui/core/ModalUnstyled/";
 import { styled, Box } from "@mui/system";
 import AddPinForm from '../AddPinModal';
+import { useQuery } from '@apollo/client';
+import { QUERY_ITEMS } from '../../utils/queries';
 
 const testItems = [
   {"item": "couch","latitude":30.230015,"longitude":-97.824436},
   {"item": "shoes","latitude":30.273115,"longitude":-97.778055},
   {"item": "take-a-book-leave-a-book library","latitude":30.266644,"longitude":-97.730224}
-]
+];
+
 
 function Map() {
+
+  const { data, loading } = useQuery(QUERY_ITEMS);
+  const items = data?.items || [];
+  
+
+
   // add pin modal 
   const StyledModal = styled(ModalUnstyled)`
     position: fixed;
@@ -72,7 +81,7 @@ function Map() {
       <AddCircleIcon sx={{fontSize: '4vw', color: 'rgb(191, 171, 171)'}}/>
       </IconButton>
       </div>
-      <MapPins data={testItems} />
+      <MapPins data={testItems} items={items} />
       </ReactMapGL>
 
       <StyledModal
