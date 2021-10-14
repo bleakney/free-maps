@@ -9,6 +9,7 @@ import AddPinForm from '../AddPinModal';
 import PinInfo from '../PinInfo';
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../../utils/queries';
+import Auth from '../../utils/auth';
 
 
 function Map() {
@@ -59,7 +60,6 @@ function Map() {
       console.log(items);
     });
     
-    
     setAddPinModalOpen(false);
   }
 
@@ -84,11 +84,14 @@ function Map() {
       mapboxApiAccessToken="pk.eyJ1IjoiYmxlYWtuZXkiLCJhIjoiY2t1ZzJjb2RiMjBjMTJvbzhubnNqdWlncSJ9.NC3BTCx2RMAohqDdk2BW9A"
       onViewportChange={nextViewport => setViewport(nextViewport)}
     >
-      <div className="addPinBtnContainer">
+      {Auth.loggedIn() ? (
+        <div className="addPinBtnContainer">
       <IconButton onClick={handleAddPinModalOpen}>
       <AddCircleIcon sx={{fontSize: '4vw', color: 'rgb(191, 171, 171)'}}/>
       </IconButton>
       </div>
+      ) : (<></>)}
+      
       <MapPins items={itemsState.length ? (itemsState) : (items)} onClick={setPopupInfo} />
 
       {popupInfo && (
