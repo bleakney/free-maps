@@ -332,3 +332,22 @@ a.social-icon {
   margin-right: 2rem;
   margin-top: 1rem;
 }
+
+/*** Menu Drawer ***/
+#item-title {
+  color: $redgray-dark;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  height: 3px !important;
+  background-color: $redgray-dark !important;
+}
+
+.css-s7ig04-MuiButtonBase-root-MuiTab-root {
+  color: $blue-dark !important;
+  font-weight: 550 !important;
+}
+
