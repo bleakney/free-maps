@@ -177,6 +177,25 @@ form {
     width: 100%;
 }
 
+
+.pin-info-container {
+    h5 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: .75rem;
+        font-weight: 200;
+    }
+   .pinInfo-quantity-container {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       p {
+           padding-left: .33rem;
+       }
+   }
+}
+
 // Search Page Starts Here
 
 .search-page {
