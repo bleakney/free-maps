@@ -30,6 +30,7 @@
     "react-icons": "^4.3.1",
     "react-map-gl": "^6.1.17",
     "react-particles-js": "^3.5.3",
+    "tsparticles": "^1.35.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
     "react-social-icons": "^5.6.1",

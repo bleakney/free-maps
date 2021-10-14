@@ -18,6 +18,7 @@ import NoMatch from "./pages/NoMatch";
 // import header and footer
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Particles from "react-particles-js";
 
 // set up server with @apollo/client
 const httpLink = createHttpLink({
@@ -58,7 +59,7 @@ function App() {
         <div className="app-container">
             <Header />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Home}/>
               <Route exact path='/Map' component={MapView} />
               <Route exact path="/404" component={NoMatch} />
             </Switch>
