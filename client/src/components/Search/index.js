@@ -9,8 +9,8 @@ function Search() {
       <FontAwesomeIcon icon={faMapMarkerAlt} size="5x" color="rgb(194, 228, 255)" alignmentBaseline="central"> </FontAwesomeIcon> 
       <h1>Free Maps</h1>
       <div className="box">
-        <FontAwesomeIcon icon={faSearch} size="2x"></FontAwesomeIcon>
-        <input type="text" name=""></input>
+        <button id="search-glass"><FontAwesomeIcon icon={faSearch} size="3x"/></button>
+        <input type="text" name="zip-code" placeholder="Enter your zipcode or city"></input>
       </div>
       <h2>Find your next treasure here!</h2>
     </div>

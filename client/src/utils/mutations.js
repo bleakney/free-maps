@@ -25,12 +25,15 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 `;
 
 export const ADD_ITEM = gql `
-mutation addItem($title: String!, $description: String!, $status: String!, $address: String!, $quantity: String!) {
-    addItem(title: $title, description: $description, status: $status, address: $address, quantity: $quantity) {
+mutation addItem($title: String!, $description: String!, $status: String!, $address: String!, $city: String!, $state: String!, $zipcode: String! $quantity: String!) {
+    addItem(title: $title, description: $description, status: $status, address: $address, city: $city, state: $state, zipcode: $zipcode, quantity: $quantity) {
       title
       description
       status
       address
+      city
+      state
+      zipcode
       quantity
       username
       createdAt

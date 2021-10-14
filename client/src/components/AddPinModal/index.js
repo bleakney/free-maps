@@ -9,6 +9,9 @@ function AddPinForm() {
     description: "",
     status: "",
     address: "",
+    city: "",
+    state: "",
+    zipcode: "",
     quantity: "",
   });
 
@@ -47,11 +50,14 @@ function AddPinForm() {
     }
 
     setFormState({
-    title: "",
-    description: "",
-    status: "",
-    address: "",
-    quantity: "",
+      title: "",
+      description: "",
+      status: "",
+      address: "",
+      city: "",
+      state: "",
+      zipcode: "",
+      quantity: "",
     });
   };
 
@@ -106,6 +112,44 @@ function AddPinForm() {
             onChange={handleInputChange}
           />
           <label>Address</label>
+        </div>
+        <div className="input-container">
+          <input
+            className="form-input"
+            name="city"
+            required="required"
+            type="text"
+            id="city"
+            value={formState.city}
+            onChange={handleInputChange}
+          />
+          <label>City</label>
+        </div>
+        <div className="state-zip-container">
+        <div className="input-container">
+          <input
+            className="form-input"
+            name="state"
+            required="required"
+            type="text"
+            id="state"
+            value={formState.state}
+            onChange={handleInputChange}
+          />
+          <label>State</label>
+        </div>
+        <div className="input-container">
+          <input
+            className="form-input"
+            name="zipcode"
+            required="required"
+            type="text"
+            id="zipcode"
+            value={formState.zipcode}
+            onChange={handleInputChange}
+          />
+          <label>Zip code</label>
+        </div>
         </div>
         <div className="input-container">
           <input
