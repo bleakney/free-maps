@@ -75,6 +75,7 @@ const typeDefs = gql`
     addCoordinates(itemId: ID!, latitude: String!, longitude: String!): Item
     deleteItem(_id: ID!): Item
     
+    
   }
 `;
 // export the typeDefs

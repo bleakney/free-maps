@@ -113,19 +113,23 @@ const resolvers = {
             
             return updatedUser;
     }
-    }
-    // updateItems: async (parent, { input }, context) => {
-    //     if (context.user) {
-    //         const updatedItem = await Item.findByIdAndDelete(
+    },
 
-    //             {_id: item._id},
-    //             {new: true}
-
-    //         );
-
-    //         return updatedItem;
-    //     }
-    // },
+    // updateItem: async (parent, args, context) => {
+    //     console.log(args);
+    //     await Item.findOneAndUpdate(
+    //         { _id: args._id },
+    //         { $push: { Item: {title, description, status, address, city, state, zipcode, quantity}}}
+    //         { new: true });
+    //         const updatedUser = await User.findOneAndUpdate(
+    //             { _id: context.user._id },
+    //             { $push: { postedItems: {itemId: args._id} } },
+    //             { new: true }
+    //         ).populate('postedItems');
+            
+    //         return updatedUser;
+    // }
+    // }
     
     // saveItems: async (parent, args, context) => {
     //     if (context.user) {
@@ -142,6 +146,6 @@ const resolvers = {
     //     throw new AuthenticationError('You need to be logged in');
     // },
     
-
 }
+
 module.exports = resolvers;
