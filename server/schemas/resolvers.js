@@ -91,24 +91,24 @@ const resolvers = {
         throw new AuthenticationError('You need to be logged in!')
     }},
 
-    // updateItems: async (parent, {title, description, status, address, city, state, zipcode, quantity}, context) => {
-    //     if (context.user) {
-    //         const updatedItem = await Item.findOneAndUpdate(
-    //             {title: title},
-    //             {description: description},
-    //             {status: status},
-    //             {address: address},
-    //             {city: city},
-    //             {state: state},
-    //             {zipcode: zipcode},
-    //             {quantity: quantity},
-    //             {new: true}
+    updateItems: async (parent, {title, description, status, address, city, state, zipcode, quantity}, context) => {
+        if (context.user) {
+            const updatedItem = await Item.findOneAndUpdate(
+                {title: title},
+                {description: description},
+                {status: status},
+                {address: address},
+                {city: city},
+                {state: state},
+                {zipcode: zipcode},
+                {quantity: quantity},
+                {new: true}
 
-    //         );
+            ).poplulate("postedItems");
             
-    //         return updatedItem;
-    //     }
-    // },
+            return updatedItem;
+        }
+    },
 
     // deleteItems: async (parent,{ itemId }, context) => {
     //     if (context.user) {
@@ -123,20 +123,20 @@ const resolvers = {
     //     }
     // },
     
-    saveItems: async (parent, args, context) => {
-        if (context.user) {
-            const updatedUser = await User.findOneAndUpdate(
-                {_id: context.user._id},
-                { $addToSet: {savedItems: args.input}},
-                {new: true}
+    // saveItems: async (parent, args, context) => {
+    //     if (context.user) {
+    //         const updatedUser = await User.findOneAndUpdate(
+    //             {_id: context.user._id},
+    //             { $addToSet: {savedItems: args.input}},
+    //             {new: true}
 
-            ).populate('savedItems');
+    //         ).populate('savedItems');
 
-            return updatedUser;
-        }
+    //         return updatedUser;
+    //     }
 
-        throw new AuthenticationError('You need to be logged in');
-    },
+    //     throw new AuthenticationError('You need to be logged in');
+    // },
     
 
 }
