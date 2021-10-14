@@ -68,6 +68,13 @@ mutation addCoordinates($itemId: ID!, $latitude: String!, $longitude: String!) {
   }
 `;
 
+export const DELETE_ITEM = gql `
+mutation deleteItem($_id: ID!) {
+  deleteItem(_id: $_id) {
+    _id
+  }
+}
+`;
 // export const DELETE_ITEM = gql `
 // mutation deleteItem($title: String!, $description: String!, $status: String!, address: String!, quantity: String!, username: String!) {
 //     addItem(title: $title, description: $description, status: $status, address: $address, quantity: $quantity){
