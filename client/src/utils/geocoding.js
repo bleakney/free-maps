@@ -1,10 +1,10 @@
-export const createCoordinates = (address, city, state, zipcode) => {
+const createCoordinates = async (address, city, state, zipcode) => {
 
     const geocodingToken = "l7WaL1SVv79paMDRxtv3gPvhcNkqI6Q1";
     // convert address input to api format
     const addressArr = address.split(' ');
     let newAddressArr = [];
-    for (i = 0; i < addressArr.length; i++) {
+    for (let i = 0; i < addressArr.length; i++) {
         if (i < addressArr.length - 1) {
         let addressPartial = addressArr[i] + '+';
         newAddressArr.push(addressPartial);
@@ -15,26 +15,26 @@ export const createCoordinates = (address, city, state, zipcode) => {
     const newAddress = newAddressArr.join('');
   
    async function fetchCoordinates (apiKey, address, city, state, zipcode) {
-        fetch(
+        let response = await fetch(
             `http://www.mapquestapi.com/geocoding/v1/address?key=${apiKey}&street=${address}&city=${city}&state=${state}&postalCode=${zipcode}`,
             {
                 method: 'GET',
                 headers: {
                     "Content-Type": "application/json" 
                 }
-        })
-        .then(response => response.json())
-        .then(data => {
-              const latitude = data.results[0].locations[0].displayLatLng.lat;
-              const longitude = data.results[0].locations[0].displayLatLng.lng;
-  
-              console.log(latitude, longitude);
-              return [latitude, longitude];
-        })
-        
+        });
+        let data = await response.json();
+        const latitude = data.results[0].locations[0].displayLatLng.lat;
+        const longitude = data.results[0].locations[0].displayLatLng.lng;
+
+        return [latitude, longitude];
+    
     };
   
-    fetchCoordinates(geocodingToken, newAddress, city, state, zipcode);
+    let coords = await fetchCoordinates(geocodingToken, newAddress, city, state, zipcode);
+    return coords;
   
   };
+
+  export default createCoordinates;
 
