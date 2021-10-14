@@ -35,24 +35,32 @@ export const QUERY_ITEM = gql`
   }
 `;
 
-// export const QUERY_USER = gql` 
-//   query user($username: String!) {
-//     user(username: $username) {
-//       _id
-//       username
-//       email
-//       phone
-//       location
-//       savedItems {
-//         title
-//         description
-//         image
-//         status
-//         quantity
-//       }
-//       donation {
-
-//       }
-//     }
-//   }
-// `;
+export const QUERY_USER = gql` 
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      phone
+      location
+      savedItems {
+        title
+        description
+        image
+        status
+        quantity
+      }
+      postedItems {
+      title: String
+      description: String
+      createdAt: String
+      status: String
+      address: String
+      city: String
+      state: String
+      zipcode: String
+      quantity: String
+      }
+    }
+  }
+`;
