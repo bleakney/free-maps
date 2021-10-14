@@ -91,13 +91,13 @@ const resolvers = {
     //     }
     // },
 
-    // deleteItem: async (parent,{ itemId }, context) => {
+    // deleteItem: async ( parent, args, context) => {
     //     console.log(context+"context");
-    //     console.log(input);
+    //     console.log(args);
     //     if (context.user) {
     //         const updatedUser = await User.findOneAndUpdate(
     //             {_id: context.user._id},
-    //             { $pull: {postedItems: itemId}},
+    //             { $pull: {postedItems: item.ID}},
     //             {new: true}
 
     //         ).populate("postedItems");

@@ -18,8 +18,6 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    phone: String
-    location: String
     savedItems: [Item]
     postedItems: [Item]
   }
@@ -31,7 +29,7 @@ const typeDefs = gql`
     createdAt: String
     status: String
     address: String
-    quantity: String
+    quantity: Int
     username: String
     coordinates: [Coordinates]
   }
