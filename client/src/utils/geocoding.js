@@ -16,7 +16,7 @@ const createCoordinates = async (address, city, state, zipcode) => {
   
    async function fetchCoordinates (apiKey, address, city, state, zipcode) {
         let response = await fetch(
-            `http://www.mapquestapi.com/geocoding/v1/address?key=${apiKey}&street=${address}&city=${city}&state=${state}&postalCode=${zipcode}`,
+            `https://www.mapquestapi.com/geocoding/v1/address?key=${apiKey}&street=${address}&city=${city}&state=${state}&postalCode=${zipcode}`,
             {
                 method: 'GET',
                 headers: {
