@@ -16,8 +16,8 @@ function MapPins(props) {
     return items.map((item) => (
         <Marker 
         key={item._id}
-        longitude={parseFloat(item.coordinates.longitude)}
-        latitude={parseFloat(item.coordinates.latitude)}>
+        longitude={parseFloat(item.coordinates[0].longitude)}
+        latitude={parseFloat(item.coordinates[0].latitude)}>
 
             <RoomIcon sx={{color: "#000"}} onClick={() => onClick(item)}></RoomIcon>
             {/* <svg
