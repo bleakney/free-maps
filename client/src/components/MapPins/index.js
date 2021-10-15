@@ -11,7 +11,6 @@ import RoomIcon from '@mui/icons-material/Room';
 function MapPins(props) {
     // const { data, onClick } = props;
     const { items, onClick }  = props
-    console.log(item[0].coordinates[0].longitude);
  
     return items.map((item) => (
         <Marker 
