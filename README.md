@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/badge/dotenv-green" />
 </p>
 
- <h4>🔍 Designed and coded by <a href="https://github.com/fizzaaz">FIZZA ZAIDI</a> | <a href="https://github.com/bleakney">BLEAKNEY BISSETT</a> | <a href="https://github.com/darkholyphoenix">JAMES BOWEN</a> | <a href="https://github.com/mbrianna1170">BRI MILLER</a> | <a href="https://github.com/Mindydiane"> MINDY DIANA</a></h4>
+ <h4>🔍 Designed and coded by <a href="https://github.com/fizzaaz">FIZZA ZAIDI</a> | <a href="https://github.com/bleakney">BLEAKNEY BISSETT</a> | <a href="https://github.com/darkholyphoenix">JAMES BOWEN</a> | <a href="https://github.com/mbrianna1170">BRI MILLER</a> | <a href="https://github.com/Mindydiane"> MINDY DIANE GARZA</a></h4>
 
 
 Find free items on the go! Check out the free-maps, someone elses trash may be the item you need!. Free-map is a non-profit website, allowing users to search for charities and donate to a personal cause of their choosing. The application incorporates the full "MERN" stack, featuring a Mongo Database that saves user information.  
@@ -29,9 +29,9 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 
 ✋ [Deployed Application URL](https://tranquil-garden-66594.herokuapp.com/)
 
-![Screen Shot](/client/public/assets/screenshot.JPG)
+![tranquil-garden-66594 herokuapp com_](https://user-images.githubusercontent.com/80286982/137552829-a0843c27-7c74-48cc-8802-e95fd6fcd4db.png)
 
-
+![tranquil-garden-66594 herokuapp com_map](https://user-images.githubusercontent.com/80286982/137552337-a3407027-cfd7-42c0-93ba-51fed303f49c.png)
 
 ## Table of Contents
 
@@ -112,7 +112,7 @@ Find free items on the go! Check out the free-maps, someone elses trash may be t
 -  <a href="https://github.com/bleakney">BLEAKNEY BISSETT</a> 
 - <a href="https://github.com/darkholyphoenix">JAMES BOWEN</a>
 -  <a href="https://github.com/mbrianna1170">BRI MILLER</a>
-- <a href="https://github.com/Mindydiane"> MINDY DIANA</a></h4>
+- <a href="https://github.com/Mindydiane"> MINDY DG</a></h4>
 
 
 ## 🔍Issues
